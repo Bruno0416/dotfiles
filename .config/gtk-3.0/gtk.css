@@ -1,0 +1,29 @@
+/* Importar colores de Pywal (Solo para acentos y texto) */
+@import url("file:///home/bruno/.cache/wal/colors-wal-gtk.css"); 
+
+/* ========================================================== */
+/* REGLAS EXCLUSIVAS ANTI-PADDING Y ANTI-SOMBRA */
+/* (Se eliminó toda referencia a background-color) */
+/* ========================================================== */
+
+/* Aplica a la estructura de la ventana, diálogos y decoraciones */
+window, decoration, filechooser, window.csd {
+    /* Eliminación total del espacio que GTK reserva para la sombra */
+    margin: 0px;
+    padding: 0px;
+    border-width: 0px;
+
+    box-shadow: none;
+    border: none; 
+    border-radius: 0px;
+}
+
+/* Aseguramos las capas internas que pueden tener margen residual */
+window.background, .view, .view:active, .view:focus, window.csd decoration {
+    margin: 0px;
+    padding: 0px;
+    box-shadow: none;
+    border-width: 0px;
+    /* IMPORTANTE: No se toca background-color para preservar el gris del tema */
+}
+@import 'colors.css';

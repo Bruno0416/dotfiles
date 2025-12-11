@@ -1,0 +1,109 @@
+{
+    "telemetry.sqmId": "",
+    "telemetry.machineId": "5ccedd49f2b9002d0142989707a8448c5c3c08a32ffdef49fd71a14d0f9e21c4",
+    "telemetry.devDeviceId": "5b63d857-d4df-4a8c-9959-7f3059acb831",
+    "backupWorkspaces": {
+        "workspaces": [],
+        "folders": [
+            {
+                "folderUri": "file:///home/bruno/.config/waybar"
+            },
+            {
+                "folderUri": "file:///home/bruno/.config/hypr"
+            }
+        ],
+        "emptyWindows": [
+            {
+                "backupFolder": "1765410266117"
+            },
+            {
+                "backupFolder": "1765414706672"
+            }
+        ]
+    },
+    "windowControlHeight": 35,
+    "profileAssociations": {
+        "workspaces": {
+            "file:///home/bruno/.config/hypr": "__default__profile__",
+            "file:///home/bruno/.config/waybar": "__default__profile__",
+            "file:///home/bruno/chromium-wal-theme": "__default__profile__",
+            "file:///home/bruno/chromium-wal": "__default__profile__",
+            "file:///home/bruno/Documents/Python/mates": "__default__profile__"
+        },
+        "emptyWindows": {
+            "1765414706672": "__default__profile__"
+        }
+    },
+    "theme": "vs-dark",
+    "themeBackground": "#24292e",
+    "windowSplash": {
+        "zoomLevel": 0,
+        "baseTheme": "vs-dark",
+        "colorInfo": {
+            "foreground": "#d1d5da",
+            "background": "#24292e",
+            "editorBackground": "#24292e",
+            "titleBarBackground": "#24292e",
+            "titleBarBorder": "#1b1f23",
+            "activityBarBackground": "#24292e",
+            "activityBarBorder": "#1b1f23",
+            "sideBarBackground": "#1f2428",
+            "sideBarBorder": "#1b1f23",
+            "statusBarBackground": "#24292e",
+            "statusBarBorder": "#1b1f23",
+            "statusBarNoFolderBackground": "#24292e"
+        },
+        "layoutInfo": {
+            "sideBarSide": "left",
+            "editorPartMinWidth": 220,
+            "titleBarHeight": 35,
+            "activityBarWidth": 48,
+            "sideBarWidth": 300,
+            "auxiliaryBarWidth": 0,
+            "statusBarHeight": 22,
+            "windowBorder": false
+        }
+    },
+    "windowsState": {
+        "lastActiveWindow": {
+            "folder": "file:///home/bruno/.config/waybar",
+            "backupPath": "/home/bruno/.config/Code - OSS/Backups/a6b25e09c08b9dce89f2660d5400bc3a",
+            "uiState": {
+                "mode": 1,
+                "x": 1932,
+                "y": 63,
+                "width": 1261,
+                "height": 1365
+            }
+        },
+        "openedWindows": []
+    },
+    "windowSplashWorkspaceOverride": {
+        "layoutInfo": {
+            "sideBarWidth": 300,
+            "auxiliaryBarWidth": 9007199254740991,
+            "workspaces": {
+                "d7c05a18f8c36aff9701467f03aae4c8": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "fac7d25e6f04f34157672859c7f57d06": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "7f508695a1c02d0a5a647edd917e7f16": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": true
+                },
+                "d137bc752c4473efb2ea32c77d2f8060": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "02993c2e15d1f786982c53f8258961b7": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                }
+            }
+        }
+    }
+}

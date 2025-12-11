@@ -1,0 +1,8 @@
+2025/12/10-18:08:39.965 1773 Reusing MANIFEST /home/bruno/.config/discord/Local Storage/leveldb/MANIFEST-000001
+2025/12/10-18:08:39.978 1773 Recovering log #160
+2025/12/10-18:08:39.980 1773 Level-0 table #163: started
+2025/12/10-18:08:39.983 1773 Level-0 table #163: 119569 bytes OK
+2025/12/10-18:08:39.987 1773 Delete type=0 #160
+2025/12/10-18:18:31.591 1774 Level-0 table #166: started
+2025/12/10-18:18:31.626 1774 Level-0 table #166: 3958064 bytes OK
+2025/12/10-18:18:31.628 1774 Delete type=0 #164

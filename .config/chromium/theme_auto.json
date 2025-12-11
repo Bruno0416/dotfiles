@@ -1,0 +1,12 @@
+{
+    "theme": {
+        "colors": {
+            "frame": "#0b101b",
+            "frame_inactive": "#2C4FA1",
+            "toolbar": "#2C6DBD",
+            "tab_background_text": "#aab8d2",
+            "bookmark_text": "#aab8d2",
+            "button_background": "#2C76C1"
+        }
+    }
+}

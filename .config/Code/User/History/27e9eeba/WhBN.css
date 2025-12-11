@@ -1,0 +1,52 @@
+/* Usamos ruta absoluta para asegurar que lea el archivo actualizado */
+@import '/home/bruno/.cache/wal/colors-waybar.css';
+
+* {
+    background-image: none;
+    font-family: "JetBrains Mono Nerd Font", Roboto, sans-serif;
+}
+
+window {
+    /* Fondo oscuro pero transparente para el blur */
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+button {
+    color: @foreground;
+    
+    /* FONDO NORMAL: Blanco tenue */
+    background-color: rgba(255, 255, 255, 0.05);
+    
+    /* BORDE: Usa el color del tema */
+    border: 2px solid @color1;
+    border-radius: 20px;
+    
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25%;
+    
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/* SOLO AL PASAR EL MOUSE (HOVER) SE LLENA DE COLOR */
+button:hover {
+    background-color: @color1;
+    color: @background;
+    border-color: @foreground;
+}
+
+/* AL ESTAR SELECCIONADO (FOCUS/TECLADO) SOLO CAMBIA EL BORDE */
+/* Esto arregla que el botón de Lock aparezca lleno de color al inicio */
+button:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: @foreground;
+    box-shadow: 0 0 10px 2px @color1;
+}
+
+#lock { background-image: image(url("/usr/share/wlogout/icons/lock.png")); }
+#logout { background-image: image(url("/usr/share/wlogout/icons/logout.png")); }
+#suspend { background-image: image(url("/usr/share/wlogout/icons/suspend.png")); }
+#hibernate { background-image: image(url("/usr/share/wlogout/icons/hibernate.png")); }
+#shutdown { background-image: image(url("/usr/share/wlogout/icons/shutdown.png")); }
+#reboot { background-image: image(url("/usr/share/wlogout/icons/reboot.png")); }

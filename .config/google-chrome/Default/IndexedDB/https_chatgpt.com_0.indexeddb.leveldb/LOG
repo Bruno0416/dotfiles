@@ -1,0 +1,25 @@
+2025/12/09-21:39:12.121 22a4 Reusing MANIFEST /home/bruno/.config/google-chrome/Default/IndexedDB/https_chatgpt.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/12/09-21:39:12.121 22a4 Recovering log #4
+2025/12/09-21:39:12.123 22a4 Reusing old log /home/bruno/.config/google-chrome/Default/IndexedDB/https_chatgpt.com_0.indexeddb.leveldb/000004.log 
+2025/12/09-22:06:05.731 22a7 Level-0 table #8: started
+2025/12/09-22:06:05.749 22a7 Level-0 table #8: 3121548 bytes OK
+2025/12/09-22:06:05.751 22a7 Delete type=0 #4
+2025/12/09-22:16:30.571 22a7 Level-0 table #10: started
+2025/12/09-22:16:30.576 22a7 Level-0 table #10: 544828 bytes OK
+2025/12/09-22:16:30.578 22a7 Delete type=0 #7
+2025/12/09-22:16:30.578 22a7 Manual compaction at level-0 from (begin) .. (end); will stop at '\x00\x02\x01 \x01\x1d\x00u\x00s\x00e\x00r\x00-\x00x\x000\x00D\x00b\x00O\x00J\x008\x00j\x002\x00V\x003\x00y\x006\x00q\x004\x00u\x00A\x00c\x00E\x00R\x00E\x00K\x00B\x00I\x00\x01$\x006\x009\x003\x008\x00c\x000\x00f\x003\x00-\x00e\x00e\x004\x000\x00-\x008\x003\x002\x008\x00-\x00a\x007\x006\x003\x00-\x002\x000\x006\x003\x006\x00d\x004\x006\x003\x00c\x00c\x008' @ 1324 : 1
+2025/12/09-22:16:30.578 22a7 Compacting 1@0 + 1@1 files
+2025/12/09-22:16:30.582 22a7 Generated table #11@0: 147 keys, 174939 bytes
+2025/12/09-22:16:30.582 22a7 Compacted 1@0 + 1@1 files => 174939 bytes
+2025/12/09-22:16:30.584 22a7 compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/12/09-22:16:30.584 22a7 Delete type=2 #10
+2025/12/09-22:16:30.584 22a7 Delete type=2 #8
+2025/12/09-22:16:30.584 22a7 Manual compaction at level-0 from '\x00\x02\x01 \x01\x1d\x00u\x00s\x00e\x00r\x00-\x00x\x000\x00D\x00b\x00O\x00J\x008\x00j\x002\x00V\x003\x00y\x006\x00q\x004\x00u\x00A\x00c\x00E\x00R\x00E\x00K\x00B\x00I\x00\x01$\x006\x009\x003\x008\x00c\x000\x00f\x003\x00-\x00e\x00e\x004\x000\x00-\x008\x003\x002\x008\x00-\x00a\x007\x006\x003\x00-\x002\x000\x006\x003\x006\x00d\x004\x006\x003\x00c\x00c\x008' @ 1324 : 1 .. (end); will stop at (end)
+2025/12/09-22:16:30.584 22a7 Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x02\x01 \x01\x1d\x00u\x00s\x00e\x00r\x00-\x00x\x000\x00D\x00b\x00O\x00J\x008\x00j\x002\x00V\x003\x00y\x006\x00q\x004\x00u\x00A\x00c\x00E\x00R\x00E\x00K\x00B\x00I\x00\x01$\x006\x009\x003\x008\x00c\x000\x00f\x003\x00-\x00e\x00e\x004\x000\x00-\x008\x003\x002\x008\x00-\x00a\x007\x006\x003\x00-\x002\x000\x006\x003\x006\x00d\x004\x006\x003\x00c\x00c\x008' @ 1414 : 1
+2025/12/09-22:16:30.584 22a7 Compacting 1@1 + 1@2 files
+2025/12/09-22:16:30.587 22a7 Generated table #12@1: 58 keys, 208778 bytes
+2025/12/09-22:16:30.587 22a7 Compacted 1@1 + 1@2 files => 208778 bytes
+2025/12/09-22:16:30.590 22a7 compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/12/09-22:16:30.590 22a7 Delete type=2 #5
+2025/12/09-22:16:30.590 22a7 Delete type=2 #11
+2025/12/09-22:16:30.590 22a7 Manual compaction at level-1 from '\x00\x02\x01 \x01\x1d\x00u\x00s\x00e\x00r\x00-\x00x\x000\x00D\x00b\x00O\x00J\x008\x00j\x002\x00V\x003\x00y\x006\x00q\x004\x00u\x00A\x00c\x00E\x00R\x00E\x00K\x00B\x00I\x00\x01$\x006\x009\x003\x008\x00c\x000\x00f\x003\x00-\x00e\x00e\x004\x000\x00-\x008\x003\x002\x008\x00-\x00a\x007\x006\x003\x00-\x002\x000\x006\x003\x006\x00d\x004\x006\x003\x00c\x00c\x008' @ 1414 : 1 .. (end); will stop at (end)

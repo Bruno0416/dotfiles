@@ -1,0 +1,7 @@
+2025/12/09-14:36:22.197 4ea Reusing MANIFEST /home/bruno/.config/google-chrome/Default/IndexedDB/https_claude.ai_0.indexeddb.leveldb/MANIFEST-000001
+2025/12/09-14:36:22.197 4ea Recovering log #3
+2025/12/09-14:36:22.197 4ea Reusing old log /home/bruno/.config/google-chrome/Default/IndexedDB/https_claude.ai_0.indexeddb.leveldb/000003.log 
+2025/12/09-14:36:25.040 4ec Level-0 table #5: started
+2025/12/09-14:36:25.041 4ec Level-0 table #5: 1981 bytes OK
+2025/12/09-14:36:25.043 4ec Delete type=0 #3
+2025/12/09-14:36:25.043 4ec Manual compaction at level-0 from (begin) .. (end); will stop at (end)

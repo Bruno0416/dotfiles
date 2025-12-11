@@ -1,0 +1,105 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "source": "arch",  // Logo oficial de Arch
+        "padding": {
+            "top": 2,
+            "right": 4
+        }
+    },
+    "display": {
+        "separator": " "   // Quitamos los dos puntos predeterminados
+    },
+    "modules": [
+        // --- HARDWARE ---
+        {
+            "type": "custom",
+            "format": "┌───────── Hardware ─────────┐",
+            "key": "  " // Espacio vacío para alinear
+        },
+        {
+            "type": "host",
+            "key": "   PC",
+            "keyColor": "green"
+        },
+        {
+            "type": "cpu",
+            "key": "  ├  CPU",
+            "keyColor": "green"
+        },
+        {
+            "type": "gpu",
+            "key": "  ├  GPU",
+            "keyColor": "green"
+        },
+        {
+            "type": "display",
+            "key": "  ├  Res",
+            "keyColor": "green"
+        },
+        {
+            "type": "disk",
+            "key": "  ├  Disk",
+            "keyColor": "green"
+        },
+        {
+            "type": "memory",
+            "key": "  └  RAM",
+            "keyColor": "green"
+        },
+
+        // --- SOFTWARE ---
+        {
+            "type": "custom",
+            "format": "├───────── Software ─────────┤",
+            "key": "  "
+        },
+        {
+            "type": "os",
+            "key": "   OS",
+            "keyColor": "blue"
+        },
+        {
+            "type": "kernel",
+            "key": "  ├  Kernel",
+            "keyColor": "blue"
+        },
+        {
+            "type": "wm",
+            "key": "  ├  WM",
+            "keyColor": "blue"
+        },
+        {
+            "type": "terminal",
+            "key": "  ├  Term",
+            "keyColor": "blue"
+        },
+        {
+            "type": "packages",
+            "key": "  ├  Pkgs",
+            "keyColor": "blue"
+        },
+        {
+            "type": "shell",
+            "key": "  └  Shell",
+            "keyColor": "blue"
+        },
+
+        // --- EXTRAS ---
+        {
+            "type": "custom",
+            "format": "└───────── Uptime ───────────┘",
+            "key": "  "
+        },
+        {
+            "type": "uptime",
+            "key": "      ",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "colors",
+            "key": "      ",
+            "symbol": "circle"
+        }
+    ]
+}

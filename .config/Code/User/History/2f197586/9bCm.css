@@ -1,0 +1,235 @@
+/* Este archivo NO se sobrescribe - solo se actualizan los colores */
+@import url("colors.css");
+
+* {
+    all: unset;
+    font-family: "JetBrainsMono Nerd Font", "Ubuntu Nerd Font", sans-serif;
+    font-size: 14px;
+    
+    --bg: @background;
+    --fg: @foreground;
+    --accent: @color1;
+    --secondary: @color2;
+    
+    --border-radius: 16px;
+    --padding: 16px;
+}
+
+/* VENTANA TRANSPARENTE */
+.blank-window {
+    background: transparent;
+}
+
+.floating-notifications {
+    background: transparent;
+}
+
+/* Control Center - Diseño moderno */
+.control-center {
+    background-color: alpha(@background, 0.85);
+    border-radius: var(--border-radius);
+    color: @foreground;
+    border: 2px solid alpha(@color1, 0.3);
+    padding: 0;
+    margin: 12px;
+}
+
+/* Header con título y botón Clear All */
+.control-center .widget-title {
+    background: transparent;
+    color: @foreground;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 20px;
+    margin: 0;
+    border-bottom: 2px solid alpha(@color1, 0.2);
+}
+
+.control-center .widget-title > button {
+    background: transparent;
+    color: alpha(@foreground, 0.7);
+    border: none;
+    font-size: 13px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.control-center .widget-title > button:hover {
+    background: alpha(@color1, 0.2);
+    color: @foreground;
+}
+
+/* Lista de notificaciones */
+.control-center-list {
+    background: transparent;
+    padding: 12px;
+}
+
+.control-center-list-placeholder {
+    color: alpha(@foreground, 0.5);
+    font-size: 16px;
+    margin: 80px 0;
+}
+
+/* Iconos en la parte superior (headphones, mic, wifi, etc) */
+.widget-inhibitors {
+    background: alpha(@color0, 0.5);
+    border: 2px solid alpha(@color1, 0.2);
+    border-radius: 12px;
+    padding: 16px;
+    margin: 12px;
+}
+
+.widget-inhibitors > button {
+    background: alpha(@color1, 0.3);
+    color: @foreground;
+    border: none;
+    border-radius: 50%;
+    padding: 12px;
+    margin: 0 6px;
+    min-width: 48px;
+    min-height: 48px;
+}
+
+.widget-inhibitors > button:hover {
+    background: alpha(@color1, 0.5);
+}
+
+/* Widget Do Not Disturb */
+.widget-dnd {
+    background: alpha(@color0, 0.5);
+    border: 2px solid alpha(@color1, 0.2);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin: 12px;
+}
+
+.widget-dnd > label {
+    color: @foreground;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.widget-dnd > switch {
+    background: alpha(@color1, 0.3);
+    border: none;
+    border-radius: 20px;
+    min-width: 50px;
+    min-height: 28px;
+}
+
+.widget-dnd > switch:checked {
+    background: @color1;
+}
+
+.widget-dnd > switch slider {
+    background: @foreground;
+    border-radius: 50%;
+    margin: 2px;
+}
+
+/* Notificaciones individuales - Diseño limpio */
+.notification {
+    background-color: alpha(@color0, 0.6);
+    border: 2px solid alpha(@color1, 0.3);
+    border-radius: 12px;
+    padding: 16px;
+    margin: 8px 12px;
+    transition: all 0.2s;
+}
+
+.notification:hover {
+    background-color: alpha(@color1, 0.2);
+    border-color: alpha(@color1, 0.5);
+    transform: scale(1.01);
+}
+
+.notification-content {
+    background: transparent;
+    padding: 0;
+}
+
+.notification-row {
+    outline: none;
+}
+
+/* App icon */
+.notification .app-icon {
+    margin-right: 12px;
+}
+
+.notification .image {
+    margin-right: 12px;
+    border-radius: 8px;
+}
+
+/* Textos de notificación */
+.summary {
+    color: @foreground;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.body {
+    color: alpha(@foreground, 0.8);
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.time {
+    color: alpha(@foreground, 0.5);
+    font-size: 11px;
+    margin-top: 4px;
+}
+
+/* Botón de cerrar notificación */
+.close-button {
+    background: alpha(@color1, 0.3);
+    color: @foreground;
+    border-radius: 50%;
+    border: none;
+    padding: 4px;
+    min-width: 24px;
+    min-height: 24px;
+    margin-left: 8px;
+}
+
+.close-button:hover {
+    background: alpha(@color2, 0.5);
+}
+
+/* Botones de acción en notificaciones */
+.notification-action {
+    background: alpha(@color1, 0.3);
+    color: @foreground;
+    border-radius: 8px;
+    border: none;
+    padding: 8px 16px;
+    margin: 4px;
+    font-size: 13px;
+}
+
+.notification-action:hover {
+    background: alpha(@color1, 0.5);
+}
+
+/* Scrollbar personalizado */
+scrollbar {
+    background: transparent;
+    width: 6px;
+}
+
+scrollbar trough {
+    background: transparent;
+}
+
+scrollbar slider {
+    background: alpha(@color1, 0.3);
+    border-radius: 3px;
+}
+
+scrollbar slider:hover {
+    background: alpha(@color1, 0.5);
+}

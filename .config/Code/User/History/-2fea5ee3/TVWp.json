@@ -1,0 +1,8 @@
+{
+    "workbench.iconTheme": "material-icon-theme",
+    "explorer.confirmDragAndDrop": false,
+    "workbench.colorTheme": "GitHub Dark",
+    "explorer.confirmDelete": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "dart.flutterSdkPath": "/home/bruno/dev/flutter"
+}

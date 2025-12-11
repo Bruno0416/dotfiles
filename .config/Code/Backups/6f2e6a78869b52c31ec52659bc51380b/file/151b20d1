@@ -1,0 +1,28 @@
+file:///home/bruno/.config/hypr/modules/autostart.conf {"mtime":1765175515760,"ctime":1764959220594,"size":1032,"etag":"3f9g97953129","orphaned":false,"typeId":""}
+# Wallpaper
+exec-once = swww-daemon
+exec-once = waypaper --restore
+
+
+# Polkit (Autenticación gráfica)
+exec-once = /usr/libexec/polkit-gnome-authentication-agent-1
+exec-once = ags
+
+# Barra de estado (La configuraremos después)
+exec-once = waybar
+
+# Notificaciones (Dunst o Swaync - pendiente)
+exec-once = swaync 
+
+# Configurar cursor 
+env = XCURSOR_THEME,Sweet-cursors
+env = XCURSOR_SIZE,20
+exec-once = hyprctl setcursor Sweet-cursors 20
+
+# configurar modo oscuro
+# exec-once = gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
+# exec-once = gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
+# exec-once = /usr/libexec/xdg-desktop-portal-hyprland
+# exec-once = sleep 1 # Pequeña pausa para asegurar el orden
+# exec-once = /usr/libexec/xdg-desktop-portal &
+

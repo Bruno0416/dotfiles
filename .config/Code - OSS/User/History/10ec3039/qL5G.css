@@ -1,0 +1,180 @@
+@import '../../.cache/wal/colors-waybar.css';
+
+@define-color primary @color4;
+@define-color secondary @color2;
+@define-color fg @foreground;
+@define-color bg alpha(@background, 0.8);
+@define-color inactive alpha(@color8, 0.62);
+
+window#waybar {
+  border-bottom: 0px solid @fg;
+  background: transparent;
+  color: @fg;
+  border: none;
+  min-height: 0px;
+  font-family: 'JetBrainsMono Nerd Font';
+  font-size: 14px;
+}
+
+#workspaces {
+  background: @bg;
+  margin: 10px 0px 0px 0px;
+  padding: 8px 5px;
+  border-radius: 100px;
+  border: solid 2px @secondary;
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+#workspaces button {
+  padding: 0px 5px;
+  margin: 0px 3px;
+  border-radius: 100px;
+  color: transparent;
+  background-color: @inactive;
+  transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.active {
+  background-color: @secondary;
+  color: transparent;
+  border-radius: 100px;
+  min-width: 50px;
+  background-size: 400% 400%;
+  transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.hover {
+  background-color: @secondary;
+  color: transparent;
+  border-radius: 100px;
+  min-width: 50px;
+  background-size: 400% 400%;
+}
+
+.modules-left {
+  margin-left: 10px;
+}
+
+.modules-right {
+  margin-right: 10px;
+}
+
+/* 1. El contenedor "Cápsula" (Corregido a #music) */
+#music {
+  border: solid 2px @fg;
+  background-color: @bg;
+  border-radius: 100px;
+  padding: 0px 10px;
+  margin: 10px 0px 0px 0px;
+  font-size: 14;
+}
+
+/* 2. Los elementos internos (Fondo transparente para que se vea la cápsula) */
+#custom-media-prev,
+#custom-media-next,
+#mpris {
+  background-color: transparent;
+  color: @fg;
+  padding: 0px 10px;
+  margin: 0;
+  font-size: 14;
+}
+
+
+#custom-media-prev:hover,
+#custom-media-next:hover {
+  color: @secondary;
+  border-radius: 10px;
+  font-size: 14;
+}
+
+
+#custom-update {
+  min-width: 12px;
+  margin: 0 7.5px;
+}
+
+
+tooltip {
+  padding: 2px;
+}
+
+#custom-update {
+  border: solid 2px @fg;
+  background-color: @bg;
+  padding: 5px 15px;
+  margin: 10px 0px 0px 0px;
+  border-radius: 100px;
+  font-size: 14;
+}
+
+
+#clock {
+  border: solid 2px @fg;
+  background-color: @bg;
+  color: @fg;
+  padding: 5px 15px;
+  margin: 10px 0px 0px 0px;
+  border-radius: 100px;
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
+}
+
+#clock:hover {
+  color: @fg;
+}
+
+tooltip {
+  background: @bg;
+  border: 2px solid @fg;
+  border-radius: 15px;
+  padding: 15px;
+  color: @fg;
+}
+
+tooltip:hover {
+  opacity: 1;
+}
+
+tooltip label {
+  color: @fg;
+}
+
+
+#custom-notification,
+#custom-power {
+  border: solid 2px @fg;
+  background-color: @bg;
+  color: @fg;
+  padding: 5px 15px;
+  margin: 10px 5px 0px 0px;
+  border-radius: 100px;
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 14px;
+
+  transition: all 0.3s ease-in-out;
+}
+
+#custom-power:hover {
+  border: solid 2px @fg;
+  background-color: @color1;
+  color: @fg;
+}
+
+
+.hidden {
+  opacity: 0;
+}
+
+#pulseaudio#mic,
+#pulseaudio {
+  border: solid 2px @fg;
+  background-color: @bg;
+  padding: 5px 15px;
+  margin: 10px 0px 0px 0px;
+  border-radius: 100px;
+  font-size: 14;
+  transition: all 0.3s ease-in-out;
+}

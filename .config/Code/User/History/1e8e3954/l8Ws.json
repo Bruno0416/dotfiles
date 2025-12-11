@@ -1,0 +1,35 @@
+{
+  "position": "top-right",
+  "layer": "overlay",
+
+  "css_variant": "dark",
+  "css_path": "/home/bruno/.cache/wal/colors.css",
+
+  "widgets": [
+    "title",
+    "dnd",
+    "notifications"
+  ],
+
+  "widgets-center": [
+    "inhibitors",
+    "volume",
+    "brightness"
+  ],
+
+  "title": {
+    "enabled": true
+  },
+
+  "dnd": {
+    "enabled": true
+  },
+
+  "notifications": {
+    "position": "top"
+  },
+
+  "control-center": {
+    "enabled": true
+  }
+}

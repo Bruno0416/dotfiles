@@ -1,0 +1,27 @@
+2025/12/10-19:21:04.602 5 Reusing MANIFEST /home/bruno/.config/chromium/Profile 2/Local Storage/leveldb/MANIFEST-000001
+2025/12/10-19:21:04.605 5 Recovering log #30
+2025/12/10-19:21:04.605 5 Reusing old log /home/bruno/.config/chromium/Profile 2/Local Storage/leveldb/000030.log 
+2025/12/10-19:29:11.574 7 Level-0 table #34: started
+2025/12/10-19:29:11.581 7 Level-0 table #34: 34002 bytes OK
+2025/12/10-19:29:11.583 7 Delete type=0 #30
+2025/12/10-20:06:56.278 7 Level-0 table #36: started
+2025/12/10-20:06:56.285 7 Level-0 table #36: 31794 bytes OK
+2025/12/10-20:06:56.287 7 Delete type=0 #33
+2025/12/10-20:26:22.913 7 Level-0 table #38: started
+2025/12/10-20:26:22.921 7 Level-0 table #38: 31092 bytes OK
+2025/12/10-20:26:22.923 7 Delete type=0 #35
+2025/12/10-20:26:22.923 7 Compacting 4@0 + 1@1 files
+2025/12/10-20:26:22.932 7 Generated table #39@0: 419 keys, 551988 bytes
+2025/12/10-20:26:22.932 7 Compacted 4@0 + 1@1 files => 551988 bytes
+2025/12/10-20:26:22.934 7 compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/12/10-20:26:22.934 7 Delete type=2 #36
+2025/12/10-20:26:22.934 7 Delete type=2 #38
+2025/12/10-20:26:22.934 7 Delete type=2 #31
+2025/12/10-20:26:22.934 7 Delete type=2 #34
+2025/12/10-20:26:22.934 7 Delete type=2 #28
+2025/12/10-20:39:38.005 7 Level-0 table #41: started
+2025/12/10-20:39:38.012 7 Level-0 table #41: 39354 bytes OK
+2025/12/10-20:39:38.014 7 Delete type=0 #37
+2025/12/10-20:42:51.136 7 Level-0 table #43: started
+2025/12/10-20:42:51.144 7 Level-0 table #43: 46446 bytes OK
+2025/12/10-20:42:51.146 7 Delete type=0 #40

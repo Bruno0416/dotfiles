@@ -1,0 +1,11 @@
+2025-12-08 03:25:21.217 [info] update#setState idle
+2025-12-08 03:25:27.290 [warning] [perf] profiling STARTED befa2cdd-4701-4acd-9d34-314b9ce525a4
+2025-12-08 03:25:32.305 [warning] [perf] profiling DONE befa2cdd-4701-4acd-9d34-314b9ce525a4
+2025-12-08 03:25:32.427 [warning] [perf] profiling STARTED befa2cdd-4701-4acd-9d34-314b9ce525a4
+2025-12-08 03:25:37.442 [warning] [perf] profiling DONE befa2cdd-4701-4acd-9d34-314b9ce525a4
+2025-12-08 03:25:37.560 [warning] [perf] profiling STARTED befa2cdd-4701-4acd-9d34-314b9ce525a4
+2025-12-08 03:25:42.574 [warning] [perf] profiling DONE befa2cdd-4701-4acd-9d34-314b9ce525a4
+2025-12-08 03:25:51.042 [info] update#setState checking for updates
+2025-12-08 03:25:51.247 [info] update#setState idle
+2025-12-08 03:28:41.281 [info] Extension host with pid 9588 exited with code: 0, signal: unknown.
+2025-12-08 03:28:41.313 [error] [UtilityProcess id: 1, type: fileWatcher, pid: 9603]: crashed with code 15 and reason 'killed'

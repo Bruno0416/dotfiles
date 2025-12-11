@@ -1,0 +1,106 @@
+/* --- Rofi Theme: Pywal Modern --- */
+
+/* Importar los colores generados por Pywal */
+@import "/home/bruno/.cache/wal/colors.rasi"
+
+* {
+    /* Mapeo de colores Pywal a nombres internos de Rofi */
+    background:         @background; /* Color0 de Pywal */
+    foreground:         @foreground; /* Color7 de Pywal */
+    accent:             @color4;     /* Color4 (Azul/Cian) como acento */
+    selection-bg:       @color4;
+    selected-bg:        @color8;     /* Color8 (Gris/Muted) para fondo seleccionado */
+
+    // Colores de la paleta Pywal para usar en el tema
+    color0:             @color0;
+    color1:             @color1;
+    color2:             @color2;
+    color3:             @color3;
+    color4:             @color4;
+    color5:             @color5;
+    color6:             @color6;
+    color7:             @color7;
+    color8:             @color8;
+    color9:             @color9;
+
+    font: "JetBrainsMono Nerd Font 11";
+
+    // Desactivar el padding en el prompt
+    spacing: 0;
+    padding: 0;
+}
+
+// Contenedor principal de la ventana
+window {
+    background-color: @background;
+    border-radius: 12px;
+    padding: 0;
+    width: 30%;
+    height: 40%;
+    location: center;
+    anchor: center;
+}
+
+// Contenedor de la entrada de texto
+mainbox {
+    padding: 10px;
+    background-color: @background;
+}
+
+// Entrada de texto (Donde escribes)
+inputbar {
+    children: [ prompt, entry ];
+    background-color: @background;
+    padding: 8px;
+    border-radius: 8px;
+    margin: 0 0 10px 0;
+}
+
+prompt {
+    padding: 5px 10px 5px 0;
+    background-color: @background;
+    text-color: @accent;
+    font: "JetBrainsMono Nerd Font 11";
+}
+
+entry {
+    padding: 5px 0 5px 0;
+    background-color: @background;
+    text-color: @foreground;
+}
+
+// Lista de aplicaciones
+listview {
+    background-color: @background;
+    spacing: 5px;
+    padding: 0;
+    columns: 1;
+    lines: 8;
+    border-radius: 8px;
+}
+
+// Elementos de la lista
+element {
+    padding: 8px;
+    background-color: @background;
+    text-color: @foreground;
+    border-radius: 6px;
+}
+
+// Elemento seleccionado
+element selected.normal {
+    background-color: @selected-bg;
+    text-color: @foreground;
+}
+
+// Íconos
+element-icon {
+    size: 1.5em;
+    padding: 0 10px 0 0;
+}
+
+// Texto de las aplicaciones
+element-text {
+    vertical-align: 0.5;
+    text-color: inherit;
+}

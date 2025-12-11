@@ -1,0 +1,7 @@
+2025/12/10-01:10:53.297 603e2 Reusing MANIFEST /home/bruno/.config/chromium/Profile 2/IndexedDB/https_bitwarden.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/12/10-01:10:53.297 603e2 Recovering log #3
+2025/12/10-01:10:53.297 603e2 Reusing old log /home/bruno/.config/chromium/Profile 2/IndexedDB/https_bitwarden.com_0.indexeddb.leveldb/000003.log 
+2025/12/10-01:15:32.509 603e4 Level-0 table #5: started
+2025/12/10-01:15:32.511 603e4 Level-0 table #5: 1144 bytes OK
+2025/12/10-01:15:32.512 603e4 Delete type=0 #3
+2025/12/10-01:15:32.512 603e4 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

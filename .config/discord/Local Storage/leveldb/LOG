@@ -1,0 +1,20 @@
+2025/12/10-18:28:20.149 40af Reusing MANIFEST /home/bruno/.config/discord/Local Storage/leveldb/MANIFEST-000001
+2025/12/10-18:28:20.161 40af Recovering log #165
+2025/12/10-18:28:20.162 40af Reusing old log /home/bruno/.config/discord/Local Storage/leveldb/000165.log 
+2025/12/10-18:42:30.845 40b0 Level-0 table #169: started
+2025/12/10-18:42:30.847 40b0 Level-0 table #169: 126558 bytes OK
+2025/12/10-18:42:30.849 40b0 Delete type=0 #165
+2025/12/10-18:42:30.849 40b0 Compacting 4@0 + 2@1 files
+2025/12/10-18:42:30.894 40b0 Generated table #170@0: 16 keys, 3864706 bytes
+2025/12/10-18:42:30.898 40b0 Generated table #171@0: 35 keys, 238832 bytes
+2025/12/10-18:42:30.898 40b0 Compacted 4@0 + 2@1 files => 4103538 bytes
+2025/12/10-18:42:30.900 40b0 compacted to: files[ 0 2 1 0 0 0 0 ]
+2025/12/10-18:42:30.900 40b0 Delete type=2 #159
+2025/12/10-18:42:30.900 40b0 Delete type=2 #158
+2025/12/10-18:42:30.900 40b0 Delete type=2 #169
+2025/12/10-18:42:30.900 40b0 Delete type=2 #166
+2025/12/10-18:42:30.900 40b0 Delete type=2 #161
+2025/12/10-18:42:30.900 40b0 Delete type=2 #163
+2025/12/10-19:41:10.781 40b0 Level-0 table #173: started
+2025/12/10-19:41:10.788 40b0 Level-0 table #173: 122612 bytes OK
+2025/12/10-19:41:10.790 40b0 Delete type=0 #168

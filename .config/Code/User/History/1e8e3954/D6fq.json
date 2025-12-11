@@ -1,0 +1,79 @@
+{
+  "$schema": "/etc/xdg/swaync/configSchema.json",
+  "ignore-gtk-theme": true,
+  "cssPriority": "user",
+  "style_control": "user",
+  "positionX": "right",
+  "positionY": "top",
+  "layer": "overlay",
+  "control-center-layer": "top",
+
+  
+  "control-center-width": 380,
+  "control-center-height": 650,  
+  "control-center-margin-top": 10,
+  "control-center-margin-bottom": 10,
+  "control-center-margin-right": 10,
+  "control-center-margin-left": 10,
+  "notification-window-width": 380,
+  "fit-to-screen": false, 
+  
+  
+  "timeout": 10,
+  "timeout-low": 5,
+  "timeout-critical": 0,
+  "relative-timestamps": true,
+  "keyboard-shortcuts": true,
+  "notification-grouping": true,
+  "image-visibility": "when-available",
+  "transition-time": 200,
+  "hide-on-clear": false,
+  "hide-on-action": true,
+
+  
+  "widgets": [
+    "title",
+    "dnd",
+    "buttons-grid",
+    "notifications"
+  ],
+  "widget-config": {
+     "buttons-grid": {
+      "buttons-per-row": 5, 
+      "actions": [
+        {
+          "label": "", 
+          "command": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+        },
+        {
+          "label": "",
+          "command": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+        },
+        {
+          "label": "",
+          "command": "grim -g \"$(slurp)\" - | wl-copy" 
+        },
+        {
+          "label": "",
+          "command": "systemctl reboot"
+        },
+        {
+          "label": "", 
+          "command": "swaylock"
+        }
+      ]
+    },
+    "title": {
+      "text": "Notifications",
+      "clear-all-button": true,
+      "button-text": "Clear All"
+    },
+    "dnd": {
+      "text": "Do not disturb"
+    },
+   
+    "notifications": {
+      "vexpand": true
+    }
+  }
+}

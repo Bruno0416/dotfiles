@@ -1,0 +1,5 @@
+[Unit]
+ConditionEnvironment=DESKTOP_SESSION!=gnome
+ConditionEnvironment=DESKTOP_SESSION!=gdm
+[Service]
+ExecStart=

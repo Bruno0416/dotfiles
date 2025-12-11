@@ -1,0 +1,20 @@
+2025/12/10-18:21:36.749 66a Reusing MANIFEST /home/bruno/.config/chromium/Profile 2/IndexedDB/chrome-extension_bgnkhhnnamicmpeenaelnjfhikgbkllg_0.indexeddb.leveldb/MANIFEST-000001
+2025/12/10-18:21:36.750 66a Recovering log #116
+2025/12/10-18:21:36.750 66a Reusing old log /home/bruno/.config/chromium/Profile 2/IndexedDB/chrome-extension_bgnkhhnnamicmpeenaelnjfhikgbkllg_0.indexeddb.leveldb/000116.log 
+2025/12/10-18:21:36.750 66a Delete type=2 #113
+2025/12/10-18:21:36.750 66a Delete type=2 #114
+2025/12/10-18:21:36.750 66a Delete type=2 #112
+2025/12/10-18:21:36.750 66a Delete type=2 #111
+2025/12/10-18:21:36.760 668 Level-0 table #124: started
+2025/12/10-18:21:36.762 668 Level-0 table #124: 622 bytes OK
+2025/12/10-18:21:36.765 668 Delete type=0 #116
+2025/12/10-18:21:36.765 668 Manual compaction at level-0 from '\x00\x17\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x18\x00\x00\x00' @ 0 : 0; will stop at '\x00\x17\x00\x00\x05' @ 13987 : 1
+2025/12/10-18:21:36.765 668 Compacting 1@0 + 4@1 files
+2025/12/10-18:21:36.783 668 Generated table #125@0: 3906 keys, 2121698 bytes
+2025/12/10-18:21:36.808 668 Generated table #126@0: 576 keys, 2112571 bytes
+2025/12/10-18:21:36.827 668 Generated table #127@0: 494 keys, 2139965 bytes
+2025/12/10-18:21:36.829 668 Generated table #128@0: 320 keys, 5804 bytes
+2025/12/10-18:21:36.829 668 Compacted 1@0 + 4@1 files => 6380038 bytes
+2025/12/10-18:21:36.831 668 compacted to: files[ 0 4 1 0 0 0 0 ]
+2025/12/10-18:21:36.831 668 Delete type=2 #124
+2025/12/10-18:21:36.832 668 Manual compaction at level-0 from '\x00\x17\x00\x00\x05' @ 13987 : 1 .. '\x00\x18\x00\x00\x00' @ 0 : 0; will stop at (end)

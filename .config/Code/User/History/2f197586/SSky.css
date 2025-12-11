@@ -1,0 +1,51 @@
+/* Definición de Variables Semánticas (Usan los colores de Pywal) */
+@define-color fg @foreground;
+@define-color bg alpha(@background, 0.9); /* Fondo del panel con 90% opacidad */
+@define-color secondary @color4; /* Color principal de acento de Pywal */
+@define-color inactive @color8; /* Color para elementos inactivos o grises */
+
+
+/* 1. Estilo General del Centro de Notificaciones */
+#notification-center {
+    background-color: @bg;
+    border-radius: 20px; /* Bordes redondeados de la ventana */
+    margin: 10px;
+    padding: 10px;
+    color: @fg;
+    font-family: 'JetBrainsMono Nerd Font';
+    font-size: 14px;
+}
+
+/* 2. Estilo de las notificaciones individuales (Cápsula interna) */
+#notification {
+    background-color: @bg;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid @secondary; /* Borde sutil del color de acento */
+}
+
+/* 3. Título y Cuerpo */
+#title {
+    color: @secondary;
+    font-weight: bold;
+}
+
+#body {
+    color: @fg;
+}
+
+/* 4. Botones y Controles */
+#close-button {
+    background-color: @secondary;
+    color: @fg;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin-top: 5px;
+}
+
+#control-center-slide {
+    background-color: @bg;
+    border-radius: 10px;
+    padding: 5px;
+}

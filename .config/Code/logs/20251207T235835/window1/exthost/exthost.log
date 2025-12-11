@@ -1,0 +1,19 @@
+2025-12-07 23:58:37.073 [info] Extension host with pid 81502 started
+2025-12-07 23:58:37.073 [info] Skipping acquiring lock for /home/bruno/.config/Code/User/workspaceStorage/7cf060428974e9d3c6dca7d318bbcf24.
+2025-12-07 23:58:37.370 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2025-12-07 23:58:37.390 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2025-12-07 23:58:37.402 [info] ExtensionService#_doActivateExtension vscode.configuration-editing, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-12-07 23:58:37.409 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-12-07 23:58:37.461 [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-12-07 23:58:37.683 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2025-12-07 23:58:37.686 [info] ExtensionService#_doActivateExtension dlasagno.wal-theme, startup: true, activationEvent: '*'
+2025-12-07 23:58:37.745 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2025-12-07 23:58:37.776 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2025-12-07 23:58:37.850 [info] Eager extensions activated
+2025-12-07 23:58:37.859 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2025-12-07 23:58:37.860 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2025-12-07 23:58:37.870 [info] ExtensionService#_doActivateExtension PKief.material-icon-theme, startup: false, activationEvent: 'onStartupFinished'
+2025-12-07 23:58:37.878 [info] ExtensionService#_doActivateExtension usernamehw.errorlens, startup: false, activationEvent: 'onStartupFinished'
+2025-12-07 23:58:56.975 [info] ExtensionService#_doActivateExtension vscode.css-language-features, startup: false, activationEvent: 'onLanguage:css'
+2025-12-08 00:04:42.702 [info] Extension host terminating: renderer closed the MessagePort
+2025-12-08 00:04:42.712 [info] Extension host with pid 81502 exiting with code 0

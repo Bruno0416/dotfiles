@@ -1,0 +1,158 @@
+/* Colores generados automáticamente desde Pywal */
+@define-color background #0C161D;
+@define-color foreground #dae3ea;
+@define-color color0 #0C161D;
+@define-color color1 #5992B7;
+@define-color color2 #669BBD;
+@define-color color3 #6EA0C1;
+@define-color color4 #8FB5CD;
+@define-color color5 #ACC8DA;
+
+* {
+    --bg: @background;
+    --fg: @foreground;
+    --accent: @color1;
+    --secondary: @color2;
+    
+    --border-radius: 12px;
+    --padding: 12px;
+}
+
+/* Forzar fondo opaco */
+window {
+    background-color: @background;
+}
+
+.blank-window {
+    background-color: transparent;
+}
+
+.floating-notifications {
+    background: transparent;
+}
+
+/* Control Center */
+.control-center {
+    background-color: @background;
+    border-radius: var(--border-radius);
+    color: @foreground;
+    border: 2px solid @color1;
+    padding: var(--padding);
+}
+
+.control-center-list {
+    background-color: @background;
+}
+
+.control-center-list-placeholder {
+    opacity: 0.5;
+    color: @foreground;
+}
+
+/* Notificaciones */
+.notification {
+    background-color: @color0;
+    border: 2px solid @color1;
+    border-radius: var(--border-radius);
+    padding: var(--padding);
+    margin: 8px;
+}
+
+.notification:hover {
+    background-color: @color1;
+    border-color: @color2;
+}
+
+.notification-content {
+    background: transparent;
+    padding: 8px;
+}
+
+.summary {
+    color: @foreground;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.body {
+    color: @foreground;
+    opacity: 0.9;
+    font-size: 12px;
+}
+
+.time {
+    color: @foreground;
+    opacity: 0.7;
+    font-size: 11px;
+}
+
+/* Botones */
+.close-button {
+    background-color: @color1;
+    color: @foreground;
+    border-radius: 8px;
+    border: 1px solid @color2;
+    padding: 4px 8px;
+}
+
+.close-button:hover {
+    background-color: @color2;
+}
+
+button {
+    background-color: @color1;
+    color: @foreground;
+    border-radius: 8px;
+    border: 1px solid @color2;
+    padding: 6px 12px;
+}
+
+button:hover {
+    background-color: @color2;
+}
+
+/* Widgets */
+.widget-title {
+    color: @foreground;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 8px;
+    background: transparent;
+}
+
+.widget-title > button {
+    background-color: @color1;
+    border: 1px solid @color2;
+}
+
+.widget-dnd {
+    background-color: @color0;
+    border: 1px solid @color1;
+    border-radius: var(--border-radius);
+    padding: 12px;
+    margin: 8px;
+}
+
+.widget-dnd > label {
+    color: @foreground;
+}
+
+.widget-dnd > switch {
+    background-color: @color1;
+}
+
+.widget-dnd > switch:checked {
+    background-color: @color2;
+}
+
+.widget-inhibitors {
+    background-color: @color0;
+    border: 1px solid @color1;
+    border-radius: var(--border-radius);
+    padding: 12px;
+    margin: 8px;
+}
+
+.widget-inhibitors > button {
+    background-color: @color1;
+}

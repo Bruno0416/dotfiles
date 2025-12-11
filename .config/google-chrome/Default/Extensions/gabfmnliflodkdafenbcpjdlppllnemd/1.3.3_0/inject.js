@@ -1,0 +1,1 @@
+(()=>{function e(){Math.random()<.1&&chrome.runtime.sendMessage({op:"checkContextMenu",target:"background"})}"complete"===document.readyState?e():window.addEventListener("load",e)})();

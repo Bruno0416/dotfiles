@@ -1,0 +1,180 @@
+#!/bin/bash
+
+# Leer colores de Pywal
+source ~/.cache/wal/colors.sh
+
+# Generar el CSS para swaync
+cat > ~/.config/swaync/style.css << EOF
+/* Colores generados automáticamente desde Pywal */
+@define-color background ${background};
+@define-color foreground ${foreground};
+@define-color color0 ${color0};
+@define-color color1 ${color1};
+@define-color color2 ${color2};
+@define-color color3 ${color3};
+@define-color color4 ${color4};
+@define-color color5 ${color5};
+
+* {
+    --bg: @background;
+    --fg: @foreground;
+    --accent: @color1;
+    --secondary: @color2;
+    
+    --border-radius: 12px;
+    --padding: 12px;
+}
+
+/* Ventana transparente para notificaciones flotantes */
+.blank-window {
+    background: transparent;
+}
+
+.floating-notifications {
+    background: transparent;
+}
+
+/* Control Center con fondo opaco */
+.control-center {
+    background-color: @background;
+    border-radius: var(--border-radius);
+    color: @foreground;
+    border: 2px solid @color1;
+    padding: var(--padding);
+}
+
+.control-center-list {
+    background-color: @background;
+}
+
+.control-center-list-placeholder {
+    opacity: 0.5;
+    color: @foreground;
+}
+
+/* Notificaciones */
+.notification {
+    background-color: @color0;
+    border: 2px solid @color1;
+    border-radius: var(--border-radius);
+    padding: var(--padding);
+    margin: 8px;
+}
+
+.notification:hover {
+    background-color: @color1;
+    border-color: @color2;
+}
+
+.notification-content {
+    background: transparent;
+    padding: 8px;
+}
+
+.notification-row {
+    outline: none;
+}
+
+.summary {
+    color: @foreground;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.body {
+    color: @foreground;
+    opacity: 0.9;
+    font-size: 12px;
+}
+
+.time {
+    color: @foreground;
+    opacity: 0.7;
+    font-size: 11px;
+}
+
+/* Botones */
+.close-button {
+    background-color: @color1;
+    color: @foreground;
+    border-radius: 8px;
+    border: 1px solid @color2;
+    padding: 4px 8px;
+}
+
+.close-button:hover {
+    background-color: @color2;
+    border-color: @color3;
+}
+
+button {
+    background-color: @color1;
+    color: @foreground;
+    border-radius: 8px;
+    border: 1px solid @color2;
+    padding: 6px 12px;
+}
+
+button:hover {
+    background-color: @color2;
+    border-color: @color3;
+}
+
+/* Widgets */
+.widget-title {
+    color: @foreground;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 8px;
+    background: transparent;
+}
+
+.widget-title > button {
+    background-color: @color1;
+    border: 1px solid @color2;
+}
+
+.widget-title > button:hover {
+    background-color: @color2;
+}
+
+.widget-dnd {
+    background-color: @color0;
+    border: 1px solid @color1;
+    border-radius: var(--border-radius);
+    padding: 12px;
+    margin: 8px;
+}
+
+.widget-dnd > label {
+    color: @foreground;
+}
+
+.widget-dnd > switch {
+    background-color: @color1;
+    border: 1px solid @color2;
+}
+
+.widget-dnd > switch:checked {
+    background-color: @color2;
+}
+
+.widget-inhibitors {
+    background-color: @color0;
+    border: 1px solid @color1;
+    border-radius: var(--border-radius);
+    padding: 12px;
+    margin: 8px;
+}
+
+.widget-inhibitors > button {
+    background-color: @color1;
+}
+
+.widget-inhibitors > button:hover {
+    background-color: @color2;
+}
+EOF
+
+# Recargar swaync
+swaync-client -rs

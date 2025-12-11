@@ -1,0 +1,15 @@
+2025-12-08 03:25:22.434 [info] Extension host with pid 9588 started
+2025-12-08 03:25:22.434 [info] Skipping acquiring lock for /home/bruno/.config/Code/User/workspaceStorage/7f1ca1997d78edd18783f6b9f4aad186.
+2025-12-08 03:25:22.444 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2025-12-08 03:25:22.494 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2025-12-08 03:25:22.543 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2025-12-08 03:25:22.571 [info] ExtensionService#_doActivateExtension dlasagno.wal-theme, startup: true, activationEvent: '*'
+2025-12-08 03:25:22.750 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2025-12-08 03:25:22.820 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2025-12-08 03:25:22.940 [info] Eager extensions activated
+2025-12-08 03:25:22.945 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2025-12-08 03:25:22.952 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2025-12-08 03:25:22.975 [info] ExtensionService#_doActivateExtension PKief.material-icon-theme, startup: false, activationEvent: 'onStartupFinished'
+2025-12-08 03:25:22.997 [info] ExtensionService#_doActivateExtension usernamehw.errorlens, startup: false, activationEvent: 'onStartupFinished'
+2025-12-08 03:28:41.274 [info] Extension host terminating: renderer closed the MessagePort
+2025-12-08 03:28:41.281 [info] Extension host with pid 9588 exiting with code 0

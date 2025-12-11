@@ -1,0 +1,155 @@
+/* Importar colores de Pywal */
+@import url("file:///home/bruno/.cache/wal/colors.css");
+
+* {
+    --bg: @background;
+    --fg: @foreground;
+    --accent: @color1;
+    --secondary: @color2;
+    
+    --cc-bg: @background;
+    --noti-bg: @color0;
+    --text-color: @foreground;
+    --noti-border-color: @color1;
+    --bg-selected: @color1;
+    
+    --border-radius: 12px;
+    --padding: 12px;
+}
+
+/* IMPORTANTE: Forzar opacidad en todas las ventanas */
+.blank-window {
+    background: alpha(@background, 1.0);
+}
+
+.floating-notifications {
+    background: transparent;
+}
+
+/* Control Center - Fondo SÓLIDO */
+.control-center {
+    background: alpha(@background, 1.0) !important;
+    border-radius: var(--border-radius);
+    color: var(--text-color);
+    border: 2px solid var(--noti-border-color);
+    padding: var(--padding);
+    opacity: 1.0 !important;
+}
+
+.control-center-list {
+    background: transparent;
+}
+
+.control-center-list-placeholder {
+    opacity: 0.5;
+}
+
+/* Notificaciones individuales */
+.notification {
+    background: alpha(@color0, 1.0) !important;
+    border: 2px solid var(--noti-border-color);
+    border-radius: var(--border-radius);
+    padding: var(--padding);
+    margin: 8px;
+    opacity: 1.0 !important;
+}
+
+.notification:hover {
+    background: alpha(@color1, 1.0) !important;
+    border-color: @color2;
+}
+
+.notification-default-action {
+    background: transparent;
+}
+
+/* Contenido de notificaciones */
+.notification-content {
+    background: transparent;
+    padding: 8px;
+}
+
+.summary {
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.body {
+    color: var(--text-color);
+    opacity: 0.9;
+    font-size: 12px;
+}
+
+.time {
+    color: var(--text-color);
+    opacity: 0.7;
+    font-size: 11px;
+}
+
+/* Botones */
+.close-button {
+    background: var(--bg-selected) !important;
+    color: var(--text-color);
+    border-radius: 8px;
+    border: 1px solid var(--noti-border-color);
+    padding: 4px 8px;
+    min-width: 20px;
+    min-height: 20px;
+}
+
+.close-button:hover {
+    background: @color2 !important;
+    border-color: @color3;
+}
+
+button {
+    background: var(--bg-selected);
+    color: var(--text-color);
+    border-radius: 8px;
+    border: 1px solid var(--noti-border-color);
+    padding: 6px 12px;
+}
+
+button:hover {
+    background: @color2;
+    border-color: @color3;
+}
+
+/* Widgets */
+.widget-title {
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 16px;
+    margin: 8px;
+}
+
+.widget-title > button {
+    background: var(--bg-selected);
+    border: 1px solid var(--noti-border-color);
+}
+
+.widget-dnd {
+    background: alpha(@color0, 1.0);
+    border: 1px solid var(--noti-border-color);
+    border-radius: var(--border-radius);
+    padding: 12px;
+    margin: 8px;
+}
+
+.widget-dnd > switch {
+    background: var(--bg-selected);
+    border: 1px solid var(--noti-border-color);
+}
+
+.widget-dnd > switch:checked {
+    background: @color2;
+}
+
+.widget-inhibitors {
+    background: alpha(@color0, 1.0);
+    border: 1px solid var(--noti-border-color);
+    border-radius: var(--border-radius);
+    padding: 12px;
+    margin: 8px;
+}

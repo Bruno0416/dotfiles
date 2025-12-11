@@ -1,0 +1,10 @@
+2025-12-10 20:44:23.480 [info] Started local extension host with pid 134080.
+2025-12-10 20:44:25.539 [info] Started local extension host with pid 134199.
+2025-12-10 20:44:28.051 [info] [perf] Render performance baseline is 13ms
+2025-12-10 20:44:28.424 [info] Started local extension host with pid 134257.
+2025-12-10 20:44:30.991 [info] [perf] Render performance baseline is 14ms
+2025-12-10 21:58:25.746 [warning] [backup tracker] suspended, ignoring dirty change event file:///home/bruno/.config/hypr/modules/windowrules.conf 
+2025-12-10 21:58:26.014 [info] Started local extension host with pid 135986.
+2025-12-10 21:58:28.584 [info] [perf] Render performance baseline is 14ms
+2025-12-10 21:58:30.011 [info] Started local extension host with pid 136036.
+2025-12-10 21:58:32.593 [info] [perf] Render performance baseline is 15ms

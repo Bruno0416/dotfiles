@@ -1,0 +1,8 @@
+2025-12-10 12:11:14.520 [info] Started local extension host with pid 2204.
+2025-12-10 12:11:17.237 [info] Started local extension host with pid 2325.
+2025-12-10 12:11:19.780 [info] [perf] Render performance baseline is 14ms
+2025-12-10 12:11:51.442 [info] ChatSessionStore: Migrating 0 chat sessions from storage service to file system
+2025-12-10 12:11:51.500 [info] Started local extension host with pid 12787.
+2025-12-10 12:11:54.082 [info] [perf] Render performance baseline is 15ms
+2025-12-10 12:24:59.390 [error] [Extension Host] (node:12787) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `exe --trace-deprecation ...` to show where the warning was created)

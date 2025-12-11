@@ -1,0 +1,8 @@
+#!/bin/bash
+# Post-run script para pywal
+
+# Actualizar tema de Rofi
+~/.config/rofi/themes/generate-pywal-theme.sh
+
+# Actualizar tema de Rofi
+~/.config/rofi/generate-theme.sh &

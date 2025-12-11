@@ -1,0 +1,6 @@
+2025/12/10-20:13:29.587 dfcc Creating DB /home/bruno/.config/chromium/Profile 2/IndexedDB/https_claude.ai_0.indexeddb.leveldb since it was missing.
+2025/12/10-20:13:29.591 dfcc Reusing MANIFEST /home/bruno/.config/chromium/Profile 2/IndexedDB/https_claude.ai_0.indexeddb.leveldb/MANIFEST-000001
+2025/12/10-20:13:32.262 dfcc Level-0 table #5: started
+2025/12/10-20:13:32.263 dfcc Level-0 table #5: 1312 bytes OK
+2025/12/10-20:13:32.265 dfcc Delete type=0 #3
+2025/12/10-20:13:32.265 dfcc Manual compaction at level-0 from (begin) .. (end); will stop at (end)

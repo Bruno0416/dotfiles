@@ -1,0 +1,8 @@
+// --- CONFIGURACIÓN MINIMALISTA ---
+configuration {
+    modi: "drun";
+    show-icons: true;
+
+
+    @theme "pywal-modern"
+}

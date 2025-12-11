@@ -1,0 +1,16 @@
+[General]
+LastUsedVersion=210800
+
+[MainWindow]
+MenuBar=Disabled
+
+[Recent Files]
+File1[$e]=$HOME/Wallpapers/wallhaven-dplw33.jpg
+File2[$e]=$HOME/Wallpapers/wallhaven-96z8vd.jpg
+File3[$e]=$HOME/Wallpapers/wallhaven-852q62.png
+Name1[$e]=wallhaven-dplw33.jpg
+Name2[$e]=wallhaven-96z8vd.jpg
+Name3[$e]=wallhaven-852q62.png
+
+[SideBar]
+InformationSplitterSizes=0,0

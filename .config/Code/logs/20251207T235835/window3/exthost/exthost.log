@@ -1,0 +1,44 @@
+2025-12-07 23:58:37.073 [info] Extension host with pid 81470 started
+2025-12-07 23:58:37.134 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2025-12-07 23:58:37.183 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2025-12-07 23:58:37.185 [info] ExtensionService#_doActivateExtension dlasagno.wal-theme, startup: true, activationEvent: '*'
+2025-12-07 23:58:37.246 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2025-12-07 23:58:37.297 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2025-12-07 23:58:37.391 [info] Eager extensions activated
+2025-12-07 23:58:37.406 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2025-12-07 23:58:37.407 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2025-12-07 23:58:37.421 [info] ExtensionService#_doActivateExtension PKief.material-icon-theme, startup: false, activationEvent: 'onStartupFinished'
+2025-12-07 23:58:37.436 [info] ExtensionService#_doActivateExtension usernamehw.errorlens, startup: false, activationEvent: 'onStartupFinished'
+2025-12-07 23:58:38.104 [info] Extension host terminating: renderer closed the MessagePort
+2025-12-07 23:58:38.117 [error] ProxyResolver#addCertificatesV1 Canceled: Canceled
+	at new ij (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:120021)
+	at JS.U (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:124631)
+	at s.<computed>.n.charCodeAt.s.<computed> (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:122125)
+	at My.loadCertificates (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:111:76705)
+	at Object.loadAdditionalCertificates (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:212:20586)
+	at /usr/share/code/resources/app/node_modules/@vscode/proxy-agent/out/index.js:808:49
+	at Generator.next (<anonymous>)
+	at /usr/share/code/resources/app/node_modules/@vscode/proxy-agent/out/index.js:35:71
+	at new Promise (<anonymous>)
+	at __awaiter (/usr/share/code/resources/app/node_modules/@vscode/proxy-agent/out/index.js:31:12)
+	at /usr/share/code/resources/app/node_modules/@vscode/proxy-agent/out/index.js:807:33
+	at /usr/share/code/resources/app/node_modules/@vscode/proxy-agent/out/index.js:810:20
+	at Generator.next (<anonymous>)
+	at /usr/share/code/resources/app/node_modules/@vscode/proxy-agent/out/index.js:35:71
+	at new Promise (<anonymous>)
+	at __awaiter (/usr/share/code/resources/app/node_modules/@vscode/proxy-agent/out/index.js:31:12)
+	at getOrLoadAdditionalCertificates (/usr/share/code/resources/app/node_modules/@vscode/proxy-agent/out/index.js:803:12)
+	at addCertificatesToOptionsV1 (/usr/share/code/resources/app/node_modules/@vscode/proxy-agent/out/index.js:783:9)
+	at resolveProxyWithRequest (/usr/share/code/resources/app/node_modules/@vscode/proxy-agent/out/index.js:140:9)
+	at /usr/share/code/resources/app/node_modules/@vscode/proxy-agent/out/index.js:372:77
+	at new Promise (<anonymous>)
+	at PacProxyAgent.resolveP [as resolver] (/usr/share/code/resources/app/node_modules/@vscode/proxy-agent/out/index.js:372:54)
+	at PacProxyAgent.<anonymous> (/usr/share/code/resources/app/node_modules/@vscode/proxy-agent/out/agent.js:74:37)
+	at Generator.next (<anonymous>)
+	at /usr/share/code/resources/app/node_modules/@vscode/proxy-agent/out/agent.js:8:71
+	at new Promise (<anonymous>)
+	at __awaiter (/usr/share/code/resources/app/node_modules/@vscode/proxy-agent/out/agent.js:4:12)
+	at PacProxyAgent.connect (/usr/share/code/resources/app/node_modules/@vscode/proxy-agent/out/agent.js:56:16)
+	at /usr/share/code/resources/app/node_modules/agent-base/dist/index.js:132:30
+	at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-07 23:58:38.117 [info] Extension host with pid 81470 exiting with code 0

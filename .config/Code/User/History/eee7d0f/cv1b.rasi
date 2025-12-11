@@ -1,0 +1,86 @@
+/* --- Rofi Theme: Pywal Modern --- */
+
+/* Importar los colores generados por Pywal */
+@import "/home/bruno/.cache/wal/colors.rasi"
+
+* {
+    /* Mapeo de colores Pywal a nombres internos de Rofi */
+    background:         @background; /* Color0 de Pywal */
+    foreground:         @foreground; /* Color7 de Pywal */
+    accent:             @color4;     /* Color4 (Azul/Cian) como acento */
+    selection-bg:       @color4;
+    selected-bg:        @color8;     /* Color8 (Gris/Muted) para fondo seleccionado */
+
+    font: "JetBrainsMono Nerd Font 10";
+    spacing: 0;
+    padding: 0;
+}
+
+// Contenedor principal de la ventana
+window {
+    background-color: @background;
+    border-radius: 12px; /* Bordes redondeados */
+    padding: 0;
+    width: 30%; /* Ancho en porcentaje */
+    height: 40%;
+    location: center;
+    anchor: center;
+    border: 2px solid @accent; /* Borde del color de acento */
+}
+
+// Contenedor de la entrada de texto
+mainbox {
+    padding: 10px;
+    background-color: @background;
+}
+
+// Entrada de texto (Donde escribes)
+inputbar {
+    children: [ prompt, entry ];
+    background-color: @selected-bg; /* Usar color gris para diferenciar */
+    padding: 8px;
+    border-radius: 8px;
+    margin: 0 0 10px 0;
+}
+
+prompt {
+    padding: 5px 10px 5px 0;
+    background-color: @selected-bg; 
+    text-color: @accent;
+}
+
+entry {
+    padding: 5px 0 5px 0;
+    background-color: @selected-bg; 
+    text-color: @foreground;
+}
+
+// Lista de aplicaciones
+listview {
+    background-color: @background;
+    spacing: 5px;
+    padding: 0;
+    columns: 1;
+    lines: 8;
+    border-radius: 8px;
+}
+
+// Elementos de la lista
+element {
+    padding: 8px;
+    background-color: @background;
+    text-color: @foreground;
+    border-radius: 6px;
+}
+
+// Elemento seleccionado (Highlight)
+element selected.normal {
+    background-color: @accent; /* Fondo del elemento con color de acento */
+    text-color: @background; /* Texto en color de fondo para contraste */
+}
+
+// Texto de las aplicaciones
+element-text {
+    vertical-align: 0.5;
+    text-color: inherit;
+}

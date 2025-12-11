@@ -1,0 +1,57 @@
+/* Importamos colores de Pywal */
+@import '/home/bruno/.cache/wal/colors-waybar.css';
+
+* {
+    background-image: none;
+    font-family: "JetBrains Mono Nerd Font", Roboto, sans-serif;
+}
+
+window {
+    /* Fondo mucho más transparente (0.5) para que no se vea tan oscuro */
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+button {
+    /* AQUÍ ESTÁ LA SOLUCIÓN DEL MORADO: */
+    /* Forzamos BLANCO puro para iconos y texto por defecto */
+    color: #FFFFFF;
+    
+    /* Fondo casi invisible (Vidrio limpio) */
+    background-color: rgba(255, 255, 255, 0.05);
+    
+    /* Borde blanco sutil (no morado) */
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    
+    border-radius: 20px;
+    margin: 10px;
+    
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25%;
+    
+    /* Animación suave */
+    transition: all 0.3s cubic-bezier(.55,0.0,.28,1.682);
+}
+
+/* AL PASAR EL MOUSE (HOVER) */
+button:hover, button:focus {
+    /* Aquí sí usamos tu color Pywal (@color1) */
+    background-color: @color1;
+    
+    /* El icono pasa a ser del color del fondo para contraste */
+    color: @background;
+    
+    /* El borde también se tiñe */
+    border-color: @color1;
+    
+    /* Efecto Zoom */
+    background-size: 35%;
+}
+
+/* Asignación de Iconos */
+#lock { background-image: image(url("/usr/share/wlogout/icons/lock.png")); }
+#logout { background-image: image(url("/usr/share/wlogout/icons/logout.png")); }
+#suspend { background-image: image(url("/usr/share/wlogout/icons/suspend.png")); }
+#hibernate { background-image: image(url("/usr/share/wlogout/icons/hibernate.png")); }
+#shutdown { background-image: image(url("/usr/share/wlogout/icons/shutdown.png")); }
+#reboot { background-image: image(url("/usr/share/wlogout/icons/reboot.png")); }

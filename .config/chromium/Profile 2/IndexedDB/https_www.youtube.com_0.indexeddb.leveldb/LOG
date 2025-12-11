@@ -1,0 +1,34 @@
+2025/12/10-19:21:06.654 dfca Reusing MANIFEST /home/bruno/.config/chromium/Profile 2/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/12/10-19:21:06.654 dfca Recovering log #57
+2025/12/10-19:21:06.655 dfca Reusing old log /home/bruno/.config/chromium/Profile 2/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/000057.log 
+2025/12/10-19:21:08.271 dfca Level-0 table #63: started
+2025/12/10-19:21:08.276 dfca Level-0 table #63: 618741 bytes OK
+2025/12/10-19:21:08.278 dfca Delete type=0 #57
+2025/12/10-19:21:08.278 dfca Manual compaction at level-0 from '\x00\x1e\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x1f\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/12/10-19:21:08.676 dfca Compacting 1@1 + 1@2 files
+2025/12/10-19:21:08.679 dfca Generated table #64@1: 397 keys, 73623 bytes
+2025/12/10-19:21:08.679 dfca Compacted 1@1 + 1@2 files => 73623 bytes
+2025/12/10-19:21:08.680 dfca compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/12/10-19:27:16.717 dfcc Level-0 table #66: started
+2025/12/10-19:27:16.731 dfcc Level-0 table #66: 1562344 bytes OK
+2025/12/10-19:27:16.735 dfcc Delete type=0 #62
+2025/12/10-19:27:16.735 dfcc Delete type=2 #60
+2025/12/10-19:27:16.735 dfcc Delete type=2 #63
+2025/12/10-19:29:03.469 dfcc Compacting 1@1 + 1@2 files
+2025/12/10-19:29:03.479 dfcc Generated table #67@1: 419 keys, 28508 bytes
+2025/12/10-19:29:03.479 dfcc Compacted 1@1 + 1@2 files => 28508 bytes
+2025/12/10-19:29:03.481 dfcc compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/12/10-19:29:03.481 dfcc Delete type=2 #64
+2025/12/10-19:29:03.481 dfcc Delete type=2 #66
+2025/12/10-20:19:51.833 dfcc Level-0 table #69: started
+2025/12/10-20:19:51.849 dfcc Level-0 table #69: 1922566 bytes OK
+2025/12/10-20:19:51.851 dfcc Delete type=0 #65
+2025/12/10-20:20:05.510 dfcc Compacting 1@1 + 1@2 files
+2025/12/10-20:20:05.520 dfcc Generated table #70@1: 501 keys, 44931 bytes
+2025/12/10-20:20:05.520 dfcc Compacted 1@1 + 1@2 files => 44931 bytes
+2025/12/10-20:20:05.521 dfcc compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/12/10-20:20:05.522 dfcc Delete type=2 #69
+2025/12/10-20:20:05.522 dfcc Delete type=2 #67
+2025/12/10-22:10:04.465 dfd7 Level-0 table #72: started
+2025/12/10-22:10:04.479 dfd7 Level-0 table #72: 1519579 bytes OK
+2025/12/10-22:10:04.481 dfd7 Delete type=0 #68

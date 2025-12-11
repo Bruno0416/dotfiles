@@ -1,0 +1,34 @@
+{
+  "position": "top-right",
+  "layer": "overlay",
+
+  "css_variant": "dark",
+  "css_path": "/home/bruno/.cache/wal/gtk.css",
+
+  "widgets": [
+    "title",
+    "dnd",
+    "notifications"
+  ],
+
+  "title": {
+    "text": "Notifications",
+    "clear-all-button": true,
+    "button-text": "Clear",
+    "icon": "preferences-system-notifications",
+    "icon-size": 20
+  },
+
+  "dnd": {
+    "text": "Do Not Disturb",
+    "icon": "notifications-disabled",
+    "icon-size": 20,
+    "enable-button": true
+  },
+
+  "notifications": {
+    "position": "top",
+    "max-count": 50,
+    "grouped": true
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "$schema": "/etc/xdg/swaync/configSchema.json",
+  "ignore-gtk-theme": true,
+  "cssPriority": "user",
+  "style_control": "user",
+  "positionX": "right",
+  "positionY": "top",
+  "layer": "overlay",
+  "control-center-layer": "top",
+
+  // --- CORRECCIONES DE TAMAÑO Y MARGEN ---
+  "control-center-width": 380,
+  "control-center-height": 550,  // Reducido a 550px (antes 860px)
+  "control-center-margin-top": 10,
+  "control-center-margin-bottom": 10,
+  "control-center-margin-right": 10,
+  "control-center-margin-left": 10,
+  "notification-window-width": 380,
+  "fit-to-screen": false, // Desactiva para honrar las alturas fijas
+  
+  // --- GENERALES ---
+  "timeout": 10,
+  "timeout-low": 5,
+  "timeout-critical": 0,
+  "relative-timestamps": true,
+  "keyboard-shortcuts": true,
+  "notification-grouping": true,
+  "image-visibility": "when-available",
+  "transition-time": 200,
+  "hide-on-clear": false,
+  "hide-on-action": true,
+
+  // --- WIDGETS Y ESTRUCTURA ---
+  "widgets": [
+    "title",
+    "dnd",
+    "buttons-grid", // Movido arriba para aparecer primero
+    "notifications"
+  ],
+  "widget-config": {
+    "title": {
+      "text": "Notifications",
+      "clear-all-button": true,
+      "button-text": "Clear All"
+    },
+    "dnd": {
+      "text": "Do not disturb"
+    },
+    
+    // --- BOTONES DE CONTROL (AUDIO, WIFI, BLOQUEO) ---
+    "buttons-grid": {
+      "buttons-per-row": 5, // 5 botones por fila
+      "actions": [
+        {
+          "label": "ﱏ", // Ícono Mute Speaker (Font Awesome/Nerd Font)
+          "command": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+        },
+        {
+          "label": "", // Ícono Mute Mic (Font Awesome/Nerd Font)
+          "command": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+        },
+        {
+          "label": "", // Ícono Bluetooth (Font Awesome/Nerd Font)
+          "command": "rfkill toggle bluetooth"
+        },
+        {
+          "label": "", // Ícono Wi-Fi (Font Awesome/Nerd Font)
+          "command": "nmcli radio wifi toggle"
+        },
+        {
+          "label": "", // Ícono Lock (Font Awesome/Nerd Font)
+          "command": "swaylock"
+        }
+      ]
+    },
+    "notifications": {
+      "vexpand": true
+    }
+  }
+}

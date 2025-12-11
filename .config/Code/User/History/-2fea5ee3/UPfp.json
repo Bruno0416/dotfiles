@@ -1,0 +1,9 @@
+{
+    "workbench.iconTheme": "material-icon-theme",
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "dart.flutterSdkPath": "/home/bruno/dev/flutter",
+    "editor.formatOnSave": true,
+    "files.useNativeScm": true
+}

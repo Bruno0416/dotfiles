@@ -1,0 +1,7 @@
+2025/12/10-12:57:54.361 558 Reusing MANIFEST /home/bruno/.config/chromium/Profile 2/IndexedDB/https_campusvirtual.duoc.cl_0.indexeddb.leveldb/MANIFEST-000001
+2025/12/10-12:57:54.361 558 Recovering log #3
+2025/12/10-12:57:54.361 558 Reusing old log /home/bruno/.config/chromium/Profile 2/IndexedDB/https_campusvirtual.duoc.cl_0.indexeddb.leveldb/000003.log 
+2025/12/10-12:58:08.222 558 Level-0 table #5: started
+2025/12/10-12:58:08.224 558 Level-0 table #5: 964 bytes OK
+2025/12/10-12:58:08.225 558 Delete type=0 #3
+2025/12/10-12:58:08.225 558 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

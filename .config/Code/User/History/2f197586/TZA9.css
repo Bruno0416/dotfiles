@@ -1,0 +1,161 @@
+/* Importar colores de Pywal */
+@import url("file:///home/bruno/.cache/wal/colors.css");
+
+* {
+    --bg: @background;
+    --fg: @foreground;
+    --accent: @color1;
+    --secondary: @color2;
+    
+    --cc-bg: #1a1a1a;  /* Color sólido temporal para probar */
+    --noti-bg: #2a2a2a;  /* Color sólido temporal para probar */
+    --text-color: @foreground;
+    --noti-border-color: @color1;
+    --bg-selected: @color1;
+    
+    --border-radius: 12px;
+    --padding: 12px;
+}
+
+/* IMPORTANTE: Forzar fondos opacos con color sólido */
+.blank-window {
+    background-color: #1a1a1a00;
+}
+
+.control-center {
+    background-color: #1a1a1a !important;
+    border-radius: var(--border-radius);
+    color: var(--text-color);
+    border: 2px solid var(--noti-border-color);
+    padding: var(--padding);
+}
+
+.floating-notifications {
+    background: transparent;
+}
+
+/* Control Center - Fondo SÓLIDO */
+.control-center {
+    background-color: @background;
+    border-radius: var(--border-radius);
+    color: var(--text-color);
+    border: 2px solid var(--noti-border-color);
+    padding: var(--padding);
+}
+
+.control-center-list {
+    background: transparent;
+}
+
+.control-center-list-placeholder {
+    opacity: 0.5;
+}
+
+/* Notificaciones individuales */
+.notification {
+    background-color: @color0;
+    border: 2px solid var(--noti-border-color);
+    border-radius: var(--border-radius);
+    padding: var(--padding);
+    margin: 8px;
+}
+
+.notification:hover {
+    background-color: @color1;
+    border-color: @color2;
+}
+
+.notification-default-action {
+    background: transparent;
+}
+
+/* Contenido de notificaciones */
+.notification-content {
+    background: transparent;
+    padding: 8px;
+}
+
+.summary {
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.body {
+    color: var(--text-color);
+    opacity: 0.9;
+    font-size: 12px;
+}
+
+.time {
+    color: var(--text-color);
+    opacity: 0.7;
+    font-size: 11px;
+}
+
+/* Botones */
+.close-button {
+    background-color: var(--bg-selected);
+    color: var(--text-color);
+    border-radius: 8px;
+    border: 1px solid var(--noti-border-color);
+    padding: 4px 8px;
+    min-width: 20px;
+    min-height: 20px;
+}
+
+.close-button:hover {
+    background-color: @color2;
+    border-color: @color3;
+}
+
+button {
+    background-color: var(--bg-selected);
+    color: var(--text-color);
+    border-radius: 8px;
+    border: 1px solid var(--noti-border-color);
+    padding: 6px 12px;
+}
+
+button:hover {
+    background-color: @color2;
+    border-color: @color3;
+}
+
+/* Widgets */
+.widget-title {
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 16px;
+    margin: 8px;
+}
+
+.widget-title > button {
+    background-color: var(--bg-selected);
+    border: 1px solid var(--noti-border-color);
+}
+
+.widget-dnd {
+    background-color: @color0;
+    border: 1px solid var(--noti-border-color);
+    border-radius: var(--border-radius);
+    padding: 12px;
+    margin: 8px;
+}
+
+.widget-dnd > switch {
+    background-color: var(--bg-selected);
+    border: 1px solid var(--noti-border-color);
+}
+
+.widget-dnd > switch:checked {
+    background-color: @color2;
+}
+
+.widget-inhibitors {
+    background-color: @color0;
+    border: 1px solid var(--noti-border-color);
+    border-radius: var(--border-radius);
+    padding: 12px;
+    margin: 8px;
+}

@@ -1,0 +1,55 @@
+@import url("/home/bruno/.cache/wal/gtk.css");
+
+/* 1. Definición de Variables Semánticas */
+/* Las variables base (@background, @foreground, etc.) vienen de config.json */
+@define-color fg @foreground;
+@define-color bg alpha(@background, 0.9); /* Fondo del panel con 90% opacidad */
+@define-color secondary @color4; /* Color principal de acento de Pywal */
+@define-color inactive @color8; /* Color para elementos inactivos o grises */
+
+
+/* 2. Estilo General del Centro de Notificaciones */
+#notification-center {
+    background-color: @bg;
+    border-radius: 20px; /* Bordes redondeados de la ventana */
+    margin: 10px;
+    padding: 10px;
+    color: @fg;
+    font-family: 'JetBrainsMono Nerd Font';
+    font-size: 14px;
+}
+
+/* 3. Título y Cuerpo */
+#title {
+    color: @secondary;
+    font-weight: bold;
+}
+
+#body {
+    color: @fg;
+}
+
+/* 4. Estilo de las notificaciones individuales (Cápsula interna) */
+#notification {
+    background-color: @bg;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid @secondary; /* Borde sutil */
+}
+
+/* 5. Botón de Control */
+#close-button {
+    background-color: @secondary;
+    color: @fg;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin-top: 5px;
+}
+
+/* 6. Estilo del control de brillo/volumen */
+#control-center-slide {
+    background-color: @bg;
+    border-radius: 10px;
+    padding: 5px;
+}

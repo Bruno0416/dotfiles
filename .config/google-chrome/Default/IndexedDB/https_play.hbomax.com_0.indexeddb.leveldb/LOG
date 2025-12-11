@@ -1,0 +1,6 @@
+2025/12/09-21:19:14.582 22b8 Creating DB /home/bruno/.config/google-chrome/Default/IndexedDB/https_play.hbomax.com_0.indexeddb.leveldb since it was missing.
+2025/12/09-21:19:14.587 22b8 Reusing MANIFEST /home/bruno/.config/google-chrome/Default/IndexedDB/https_play.hbomax.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/12/09-21:19:16.708 22a7 Level-0 table #5: started
+2025/12/09-21:19:16.709 22a7 Level-0 table #5: 4403 bytes OK
+2025/12/09-21:19:16.711 22a7 Delete type=0 #3
+2025/12/09-21:19:16.711 22a7 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

@@ -1,0 +1,9 @@
+// --- CONFIGURACIÓN MINIMALISTA ---
+configuration {
+    modi: "drun";
+    show-icons: true;
+
+    // Esto le dice a Rofi que use la configuración de pywal-modern.rasi
+    // Si hay una línea @theme en la parte superior, elimínala y usa esta en su lugar:
+    theme: "pywal-modern"; 
+}

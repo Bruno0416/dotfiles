@@ -1,0 +1,148 @@
+{
+  "reload_style_on_change": true,
+  "layer": "top",
+  "position": "top",
+  "spacing": 10,
+  "height": 56,
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "group/music"
+  ],
+  "modules-right": [
+    "pulseaudio#mic",
+    "pulseaudio",
+    "clock",
+    "custom/notification",
+    "custom/power"
+  ],
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "format": "",
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": []
+    }
+  },
+  "group/music": {
+    "tooltip": false,
+    "orientation": "horizontal",
+    "modules": [
+      "custom/media-prev",
+      "mpris",
+      "custom/media-next"
+    ]
+  },
+  "custom/media-prev": {
+    "format": "",
+    "on-click": "playerctl --player=spotify previous",
+    "tooltip": false,
+    "exec": "echo ''",
+    "exec-if": "pgrep spotify",
+    "interval": 1
+  },
+  "mpris": {
+    "tooltip": false,
+    "player": "spotify",
+    "format": "{player_icon} {dynamic}",
+    "format-paused": "{status_icon} <i>{dynamic}</i>",
+    "player-icons": {
+      "default": "▶",
+      "spotify": " "
+    },
+    "status-icons": {
+      "paused": "⏸"
+    },
+    "max-length": 25,
+    "on-scroll-up": "playerctl --player=spotify volume 0.05+",
+    "on-scroll-down": "playerctl --player=spotify volume 0.05-",
+    "on-click": "playerctl --player=spotify play-pause",
+    "on-click-right": "hyprctl dispatch exec '~/.config/waybar/scripts/toggle_spotify.sh'"
+  },
+  "custom/media-next": {
+    "format": "",
+    "on-click": "playerctl --player=spotify next",
+    "tooltip": false,
+    "exec": "echo ''",
+    "exec-if": "pgrep spotify",
+    "interval": 1
+  },
+  "custom/update": {
+    "format": "",
+    "exec": "omarchy-update-available",
+    "on-click": "omarchy-launch-floating-terminal-with-presentation omarchy-update",
+    "tooltip-format": "Omarchy update available",
+    "signal": 7,
+    "interval": 21600
+  },
+  "clock": {
+    "format": "{:L%A %H:%M}",
+    "tooltip": true,
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "return-type": "json",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#4f94e8'><b>{}</b></span>",
+        "days": "<span color='#dfe8ec'><b>{}</b></span>",
+        "weeks": "<span color='#4f94e8'><b>S{}</b></span>",
+        "weekdays": "<span color='#4f94e8'><b>{}</b></span>",
+        "today": "<span color='#dfe8ec' background='#4f94e8'><b> {} </b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  },
+  "pulseaudio": {
+    "format": "{icon}  {volume}%",
+    "scroll-step": 5,
+    "format-muted": "  Muted",
+    "format-icons": {
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    },
+    // Usamos 'hyprctl dispatch exec' para que Hyprland sea quien abra la ventana
+    "on-click": "hyprctl dispatch exec 'kitty --class wiremix -e /home/bruno/.cargo/bin/wiremix'"
+  },
+  "pulseaudio#mic": {
+    "format": "{format_source}",
+    "format-source": " {volume}%",
+    "format-source-muted": "  Muted",
+    "on-click": "wpctl set-mute @DEFAULT_SOURCE@ toggle",
+    "on-click-right": "pulsemixer",
+    /* SCROLL */
+    "on-scroll-up": "wpctl set-volume @DEFAULT_SOURCE@ 1%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_SOURCE@ 1%-",
+    "scroll-step": 5
+  },
+  // Módulo de notificaciones (swaync)
+  "custom/notification": {
+    "tooltip": false,
+    "format": "<span font='12'>󰂚</span>",
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
+  // Módulo de Power (wlogout)
+  "custom/power": {
+    "format": "<span font='12'>⏻</span>",
+    "tooltip": false,
+    "on-click": "wlogout"
+  }
+}

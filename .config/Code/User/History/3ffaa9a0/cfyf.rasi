@@ -1,0 +1,26 @@
+/* --- CONFIGURACIÓN BASE DE PYWAL --- */
+
+/* Importar los colores generados por Pywal */
+@theme "/home/bruno/.cache/wal/colors-rofi-dark.rasi"
+
+configuration {
+    modi: "drun,run,window";
+    display-drun: "Search...";
+    display-run: "Run";
+    display-window: "Windows";
+    show-icons: true;
+    sidebar-mode: false;
+    disable-history: false;
+    sort: true;
+    threads: 0;
+    scroll-method: 0;
+
+    /* Tema visual */
+    columns: 1;
+    lines: 10;
+    width: 30; /* Ancho en porcentaje */
+    padding: 5;
+
+    /* Fuente (asegúrate de tener JetBrains Mono instalada) */
+    font: "JetBrainsMono Nerd Font 10";
+}

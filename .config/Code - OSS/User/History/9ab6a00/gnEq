@@ -1,0 +1,301 @@
+import QtQuick 2.0
+import SddmComponents 2.0
+import QtGraphicalEffects 1.0
+
+Rectangle {
+    id: container
+    width: 2560
+    height: 1440
+    color: "black"
+    
+    LayoutMirroring.enabled: Qt.locale().textDirection == Qt.RightToLeft
+    LayoutMirroring.childrenInherit: true
+    
+    property int sessionIndex: sessionList.currentIndex
+    
+    TextConstants { id: textConstants }
+    
+    Connections {
+        target: sddm
+        function onLoginSucceeded() {}
+        function onLoginFailed() {
+            passwordInput.text = ""
+            passwordInput.focus = true
+        }
+    }
+    
+    // --- RELOJ (TIMER) ---
+    Timer {
+        interval: 1000
+        running: true
+        repeat: true
+        onTriggered: {
+            var date = new Date()
+            horaText.text = Qt.formatTime(date, "HH")
+            minutoText.text = Qt.formatTime(date, "mm")
+            diaText.text = Qt.formatDate(date, "dddd")
+            fechaText.text = Qt.formatDate(date, "dd MMM")
+        }
+    }
+    
+    // --- FONDO CON BLUR ---
+    Image {
+        id: wallpaper
+        anchors.fill: parent
+        source: "Backgrounds/Mountain.jpg"
+        fillMode: Image.PreserveAspectCrop
+        visible: false
+    }
+    
+    FastBlur {
+        anchors.fill: parent
+        source: wallpaper
+        radius: 30 // Blur intenso estilo Hyprlock
+        
+        layer.enabled: true
+        layer.effect: ColorOverlay {
+            color: "#33000000" // Capa oscura sutil
+        }
+    }
+    
+    // --- RELOJ (Adwaita Sans) ---
+    Column {
+        anchors.centerIn: parent
+        // Subimos un poco más la posición (-120) para dar aire a la fecha abajo
+        anchors.verticalCenterOffset: -120
+        spacing: -50
+        
+        Text {
+            id: horaText
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: Qt.formatTime(new Date(), "HH")
+            color: "white"
+            // Aumentado un poco (142 -> 155)
+            font.pixelSize: 150
+            font.bold: true
+            font.family: "Adwaita Sans"
+            style: Text.Normal
+            renderType: Text.NativeRendering // Renderizado añadido
+        }
+        
+        Text {
+            id: minutoText
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: Qt.formatTime(new Date(), "mm")
+            color: "white"
+            // Aumentado un poco (142 -> 155)
+            font.pixelSize: 150
+            font.bold: true
+            font.family: "Adwaita Sans"
+            style: Text.Normal
+            renderType: Text.NativeRendering // Renderizado añadido
+        }
+    }
+    
+    // --- FECHA (Día arriba, Fecha abajo) ---
+    Column {
+        anchors.horizontalCenter: parent.horizontalCenter
+        // Ajustamos la posición relativa al reloj
+        anchors.top: parent.top
+        anchors.topMargin: parent.height * 0.5 + 30 
+        spacing: 0
+        
+        // 1. DÍA DE LA SEMANA (Arriba)
+        Text {
+            id: diaText
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: Qt.formatDate(new Date(), "dddd")
+            color: "white"
+            // Aumentado un poco (23 -> 26)
+            font.pixelSize: 22
+            font.family: "JetBrainsMono NFM"
+            font.bold: true
+            opacity: 1.0
+            font.capitalization: Font.AllUppercase
+            renderType: Text.NativeRendering // Renderizado añadido
+        }
+
+        // 2. FECHA (Abajo)
+        Text {
+            id: fechaText
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: Qt.formatDate(new Date(), "d MMM")
+            color: "white"
+            // Aumentado un poco (17 -> 20)
+            font.pixelSize: 18
+            font.bold: true
+            font.family: "JetBrainsMono Nerd Font"
+            opacity: 1.0
+            renderType: Text.NativeRendering // Renderizado añadido
+        }
+    }
+    
+    // --- INPUT DE CONTRASEÑA (Estilo Hyprlock Exacto) ---
+    Rectangle {
+        id: loginBox
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: 200
+        width: 200
+        height: 55
+        
+        color: "#66ffffff"
+        radius: 100
+        border.width: 3
+        border.color: "#99ffffff"
+        
+        TextInput {
+            id: passwordInput
+            anchors.fill: parent
+            anchors.margins: 15
+            
+            // Mantenemos tamaño del input (15)
+            font.pixelSize: 15 
+            font.family: "JetBrainsMono Nerd Font"
+            font.letterSpacing: 5 
+            
+            color: "white"
+            echoMode: TextInput.Password
+            focus: true
+            
+            horizontalAlignment: TextInput.AlignHCenter
+            verticalAlignment: TextInput.AlignVCenter
+            
+            renderType: Text.NativeRendering // Renderizado añadido
+            
+            Text {
+                text: "Password..."
+                color: "white"
+                opacity: 0.5 
+                font.pixelSize: 15
+                font.family: "JetBrainsMono Nerd Font"
+                font.italic: true
+                font.letterSpacing: 0
+                visible: parent.text === ""
+                anchors.centerIn: parent
+                renderType: Text.NativeRendering // Renderizado añadido
+            }
+            
+            Keys.onReturnPressed: sddm.login(userModel.lastUser, passwordInput.text, sessionIndex)
+            Keys.onEnterPressed: sddm.login(userModel.lastUser, passwordInput.text, sessionIndex)
+        }
+    }
+    
+    // --- SELECTOR DE SESIÓN (Texto Flotante -> Dropdown Estilo Input) ---
+    Item {
+        id: sessionContainer
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.top: loginBox.bottom
+        anchors.topMargin: 15
+        width: 180
+        height: 35
+        z: 100
+        
+        property bool isOpen: false
+        
+        // 1. Botón Principal (SOLO TEXTO, SIN FONDO)
+        Rectangle {
+            anchors.fill: parent
+            color: "transparent"
+            border.width: 0
+            
+            Text {
+                anchors.centerIn: parent
+                text: sessionList.currentItem ? sessionList.currentItem.sessionName : ""
+                color: "white"
+                font.family: "JetBrainsMono Nerd Font"
+                // Aumentado ligeramente (15 -> 16)
+                font.pixelSize: 16 
+                opacity: 0.8 
+                elide: Text.ElideRight
+                width: parent.width
+                horizontalAlignment: Text.AlignHCenter
+                renderType: Text.NativeRendering // Renderizado añadido
+                
+                MouseArea {
+                    anchors.fill: parent
+                    hoverEnabled: true
+                    onEntered: parent.opacity = 1.0
+                    onExited: parent.opacity = 0.8
+                    onClicked: sessionContainer.isOpen = !sessionContainer.isOpen
+                }
+            }
+        }
+        
+        // 2. Lista Desplegable (FONDO ESTILO INPUT AL ABRIR)
+        Rectangle {
+            visible: sessionContainer.isOpen
+            width: parent.width + 60
+            anchors.horizontalCenter: parent.horizontalCenter
+            height: Math.min(sessionList.count * 35 + 10, 160)
+            y: parent.height + 5
+            
+            // Estilo Input (Blanco semitransparente)
+            color: "#66ffffff" 
+            radius: 15 
+            border.color: "#99ffffff"
+            border.width: 2
+            
+            ListView {
+                id: sessionList
+                anchors.fill: parent
+                anchors.margins: 5
+                clip: true
+                
+                model: sessionModel
+                currentIndex: sessionModel.lastIndex
+                
+                delegate: Item {
+                    width: parent.width
+                    height: 35
+                    property string sessionName: name 
+                    
+                    Rectangle {
+                        anchors.fill: parent
+                        radius: 5
+                        color: area.containsMouse || ListView.isCurrentItem ? "#40ffffff" : "transparent"
+                    }
+                    
+                    Text {
+                        anchors.centerIn: parent
+                        text: name
+                        color: "white"
+                        font.family: "JetBrainsMono Nerd Font"
+                        // Aumentado ligeramente (13 -> 14)
+                        font.pixelSize: 14 
+                        renderType: Text.NativeRendering // Renderizado añadido
+                    }
+                    
+                    MouseArea {
+                        id: area
+                        anchors.fill: parent
+                        hoverEnabled: true
+                        onClicked: {
+                            sessionList.currentIndex = index
+                            sessionContainer.isOpen = false
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    // Texto de Usuario
+    Text {
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.bottom: loginBox.top
+        anchors.bottomMargin: 15
+        
+        text: userModel.lastUser
+        color: "white"
+        // Aumentado un poco (15 -> 18)
+        font.pixelSize: 18
+        font.family: "JetBrainsMono Nerd Font"
+        opacity: 0.8
+        renderType: Text.NativeRendering // Renderizado añadido
+    }
+    
+    Component.onCompleted: {
+        passwordInput.forceActiveFocus()
+    }
+}

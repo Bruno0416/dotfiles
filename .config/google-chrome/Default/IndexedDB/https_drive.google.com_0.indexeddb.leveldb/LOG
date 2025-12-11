@@ -1,0 +1,10 @@
+2025/12/10-01:15:34.326 22a4 Reusing MANIFEST /home/bruno/.config/google-chrome/Default/IndexedDB/https_drive.google.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/12/10-01:15:34.326 22a4 Recovering log #52
+2025/12/10-01:15:34.337 22a4 Reusing old log /home/bruno/.config/google-chrome/Default/IndexedDB/https_drive.google.com_0.indexeddb.leveldb/000052.log 
+2025/12/10-01:15:36.372 22a7 Compacting 2@0 + 0@1 files
+2025/12/10-01:15:36.395 22a7 Generated table #56@0: 9437 keys, 2134106 bytes
+2025/12/10-01:15:36.409 22a7 Generated table #57@0: 4054 keys, 1467602 bytes
+2025/12/10-01:15:36.409 22a7 Compacted 2@0 + 0@1 files => 3601708 bytes
+2025/12/10-01:15:36.412 22a7 compacted to: files[ 0 2 4 0 0 0 0 ]
+2025/12/10-01:15:36.412 22a7 Delete type=2 #50
+2025/12/10-01:15:36.412 22a7 Delete type=2 #53
