@@ -1,0 +1,19 @@
+# Ignorar archivos del sistema y caches grandes
+.DS_Store
+Cache/
+Code/Cache/
+Google/Chrome/
+Slack/
+Spotify/
+*.log
+
+# Seguridad (¡Muy importante!)
+id_rsa
+id_ed25519
+*.pem
+.env
+_history
+.zsh_history
+.bash_history
+tokens.txt
+secrets.sh

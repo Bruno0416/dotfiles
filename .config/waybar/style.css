@@ -3,7 +3,7 @@
 @define-color primary @color4;
 @define-color secondary @color2;
 @define-color fg @foreground;
-@define-color bg alpha(@background, 0.85);
+@define-color bg alpha(@background, 0.82);
 @define-color inactive alpha(@color8, 0.62);
 
 
@@ -23,7 +23,7 @@ window#waybar {
   color: @fg;
   border: none;
   min-height: 0px;
-  font-family: 'JetBrainsMono Nerd Fontc';
+  font-family: 'JetBrainsMono Nerd Font';
   font-size: 14px;
 }
 
@@ -32,7 +32,7 @@ window#waybar {
   margin: 10px 0px 0px 0px;
   padding: 8px 5px;
   border-radius: 100px;
-  border: solid 1px @secondary;
+  border: solid 2px @secondary;
   font-weight: normal;
   font-style: normal;
 
@@ -74,7 +74,7 @@ window#waybar {
 
 /* 1. El contenedor "Cápsula" (Corregido a #music) */
 #music {
-  border: solid 1px @fg;
+  border: solid 2px @fg;
   background-color: @bg;
   border-radius: 100px;
   padding: 0px 10px;
@@ -113,7 +113,7 @@ tooltip {
 }
 
 #custom-update {
-  border: solid 1px @fg;
+  border: solid 2px @fg;
   background-color: @bg;
   padding: 5px 15px;
   margin: 10px 0px 0px 0px;
@@ -123,7 +123,7 @@ tooltip {
 
 
 #clock {
-  border: solid 1px @fg;
+  border: solid 2px @fg;
   background-color: @bg;
   color: @fg;
   padding: 5px 15px;
@@ -156,7 +156,7 @@ tooltip label {
 
 #custom-notification,
 #custom-power {
-  border: solid 1px @fg;
+  border: solid 2px @fg;
   background-color: @bg;
   color: @fg;
   padding: 5px 15px;
@@ -169,7 +169,7 @@ tooltip label {
 }
 
 #custom-power:hover {
-  border: solid 1px @fg;
+  border: solid 2px @fg;
   background-color: @color1;
   color: @fg;
 }
@@ -181,7 +181,7 @@ tooltip label {
 
 #pulseaudio#mic,
 #pulseaudio {
-  border: solid 1px @fg;
+  border: solid 2px @fg;
   background-color: @bg;
   padding: 5px 15px;
   margin: 10px 0px 0px 0px;

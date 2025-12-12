@@ -3,7 +3,7 @@
   "layer": "top",
   "position": "top",
   "spacing": 10,
-  "height": 40,
+  "height": 53,
   "modules-left": [
     "hyprland/workspaces"
   ],
@@ -104,9 +104,9 @@
     }
   },
   "pulseaudio": {
-    "format": "{icon}    {volume}%",
+    "format": "{icon}  {volume}%",
     "scroll-step": 5,
-    "format-muted": "    Muted",
+    "format-muted": "  Muted",
     "format-icons": {
       "default": [
         "",
@@ -119,8 +119,8 @@
   },
   "pulseaudio#mic": {
     "format": "{format_source}",
-    "format-source": "   {volume}%",
-    "format-source-muted": "    Muted",
+    "format-source": " {volume}%",
+    "format-source-muted": "  Muted",
     "on-click": "wpctl set-mute @DEFAULT_SOURCE@ toggle",
     "on-click-right": "pulsemixer",
     /* SCROLL */

@@ -1,11 +1,11 @@
 * {
     font: "JetBrainsMono Nerd Font Propo 12";
-    background:     #0E1317BF;
-    background-alt: #0E131799;
-    foreground:     #c8d6deFF;
-    selected:       #135490FF;
-    active:         #1A69ACFF;
-    urgent:         #287BBDFF;
+    background:     #0A1423BF;
+    background-alt: #0A142399;
+    foreground:     #e1e8edFF;
+    selected:       #3EA0E5FF;
+    active:         #4D98CFFF;
+    urgent:         #50A4DEFF;
     transparent:    #00000000;
 }
 
