@@ -5,29 +5,28 @@
   "spacing": 10,
   "height": 53,
   "modules-left": [
-    "hyprland/workspaces"
+    "custom/updates",
+    "group/music"
   ],
   "modules-center": [
-    "group/music"
+    "hyprland/workspaces"
   ],
   "modules-right": [
     "pulseaudio#mic",
     "pulseaudio",
     "clock",
-    "custom/notification",
-    "custom/power"
+    "custom/notification"
   ],
   "hyprland/workspaces": {
-    "on-click": "activate",
-    "format": "",
+    "format": "{icon}",
+    "format-icons": {
+        "default": ""
+    },
     "persistent-workspaces": {
-      "1": [],
-      "2": [],
-      "3": [],
-      "4": [],
-      "5": []
+        "DP-1": [1, 2, 3, 4, 5],
+        "HDMI-A-1": [6, 7, 8, 9]
     }
-  },
+},
   "group/music": {
     "tooltip": false,
     "orientation": "horizontal",
@@ -57,7 +56,7 @@
     "status-icons": {
       "paused": ""
     },
-    "max-length": 25,
+    "max-length": 17, // Before: was: 25
     "on-scroll-up": "playerctl --player=spotify volume 0.05+",
     "on-scroll-down": "playerctl --player=spotify volume 0.05-",
     "on-click": "playerctl --player=spotify play-pause",
@@ -70,14 +69,6 @@
     "exec": "echo ''",
     "exec-if": "pgrep spotify",
     "interval": 1
-  },
-  "custom/update": {
-    "format": "",
-    "exec": "omarchy-update-available",
-    "on-click": "omarchy-launch-floating-terminal-with-presentation omarchy-update",
-    "tooltip-format": "Omarchy update available",
-    "signal": 7,
-    "interval": 21600
   },
   "clock": {
     "format": "{:L%A %H:%M}",
@@ -105,7 +96,7 @@
   },
   "pulseaudio": {
     "format": "{icon}  {volume}%",
-    "scroll-step": 5,
+    "scroll-step": 1,
     "format-muted": "  Muted",
     "format-icons": {
       "default": [
@@ -143,6 +134,14 @@
   "custom/power": {
     "format": "<span font='16'>󰐥</span>",
     "tooltip": false,
-    "on-click": "wlogout"
-  }
+    "on-click": "wlogout --layout ~/.config/wlogout/layout --css ~/.config/wlogout/style.css --buttons-per-row 2 --margin-left 500 --margin-right 500"
+  },
+  "custom/updates": {
+    "format": "󰣇  {}",
+    "interval": 3600, // Revisa cada hora
+    "exec": "checkupdates | wc -l", // Cuenta las líneas de checkupdates
+    "exec-if": "exit 0", // Para evitar errores si no hay updates
+    "on-click": "kitty -e yay", // Comando para actualizar al hacer click
+    "signal": 8
+}
 }

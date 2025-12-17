@@ -6,37 +6,33 @@ return {
     priority = 1000,
     config = function()
       local pywal = require("pywal")
-      local lualine_exist, lualine = pcall(require, "lualine")
 
       -- 1. Configuración inicial
       pywal.setup()
       vim.cmd.colorscheme("pywal")
 
-      -- 2. Función para recargar todo "a la fuerza"
+      -- 2. Función para recargar todo
       local function reload_colors()
-        -- Limpiar la caché de Lua para que lea el nuevo archivo JSON
+        -- Limpiar caché
         for k, _ in pairs(package.loaded) do
           if k:match("^pywal") then
             package.loaded[k] = nil
           end
         end
 
-        -- Volver a cargar y aplicar
+        -- Recargar Pywal
         require("pywal").setup()
         vim.cmd.colorscheme("pywal")
 
-        -- Recargar Lualine si existe
-        if lualine_exist then
-          lualine.refresh()
+        if package.loaded["lualine"] then
+          require("lualine").refresh()
         end
       end
 
-      -- 3. Crear el vigilante de archivos (File Watcher)
-      -- Detecta cambios en ~/.cache/wal/colors.json
+      -- 3. Watcher
       local wal_cache = os.getenv("HOME") .. "/.cache/wal/colors.json"
       local w = vim.uv.new_fs_event()
 
-      -- Iniciar vigilancia
       w:start(
         wal_cache,
         {},
@@ -47,10 +43,11 @@ return {
     end,
   },
 
-  -- Configuración de Lualine
+  -- Configuración de Lualine (Integración correcta con LazyVim)
   {
     "nvim-lualine/lualine.nvim",
     opts = function(_, opts)
+      opts.options = opts.options or {}
       opts.options.theme = "pywal"
     end,
   },

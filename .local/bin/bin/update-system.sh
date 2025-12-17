@@ -1,109 +1,194 @@
 #!/bin/bash
-
-# --- CONFIGURACIÓN DE DEBUG ---
+# --- CONFIGURACIÓN ---
 LOG="/tmp/waypaper_debug.log"
-
-# Escribimos la hora de inicio para separar ejecuciones
-echo "------------------------------------------------" >>"$LOG"
-echo "Iniciando script a las: $(date)" >>"$LOG"
-echo "Usuario actual: $(whoami)" >>"$LOG"
-echo "Wallpaper recibido: $1" >>"$LOG"
-
-# --- 1. Definir Variables ---
-wallpaper="$1"
+INPUT_WALLPAPER="$1" # Guardamos el input original
 WAL_PATH="wal"
+VENCORD_THEME_DIR="$HOME/.config/Vencord/themes"
 
-# --- 2. PRIORIDAD ALTA: Actualizar fondo de SDDM ---
-echo "[SDDM] Intentando ejecutar update-sddm-bg.sh..." >>"$LOG"
+# --- FUNCIÓN DE LOGGING Y TIMER ---
+START_TIME=$(date +%s.%N)
+log_step() {
+  local message="$1"
+  local now=$(date +%s.%N)
+  local elapsed=$(echo "$now - $START_TIME" | bc)
+  echo "[T+${elapsed}s] $message" >>"$LOG"
+}
 
-# EJECUCIÓN CON DEBUG:
-# 1. Usamos ruta absoluta (/home/bruno...)
-# 2. '>> "$LOG" 2>&1' significa: guarda el éxito Y los errores en el archivo log
-sudo /home/bruno/.local/bin/update-sddm-bg.sh "$wallpaper" >>"$LOG" 2>&1
+# Reiniciar Log
+echo "------------------------------------------------" >"$LOG"
+echo "Iniciando script a las: $(date)" >>"$LOG"
 
-# Chequeamos si el comando anterior funcionó (exit code 0 = éxito)
-if [ $? -eq 0 ]; then
-  echo "[SDDM] ÉXITO: El script de SDDM terminó bien." >>"$LOG"
+# --- 0. SANITIZACIÓN / LIMPIEZA DE NOMBRE DE ARCHIVO ---
+# Esto previene errores con ImageMagick/Walcord por espacios o caracteres raros (=, ?, etc)
+log_step "Input recibido: $INPUT_WALLPAPER"
+
+DIR=$(dirname "$INPUT_WALLPAPER")
+FILENAME=$(basename "$INPUT_WALLPAPER")
+EXTENSION="${FILENAME##*.}"
+NAME_ONLY="${FILENAME%.*}"
+
+# Reemplazamos cualquier cosa que no sea letra, numero, punto o guion bajo con un guion bajo
+CLEAN_NAME=$(echo "$NAME_ONLY" | sed -e 's/[^a-zA-Z0-9._-]//g')
+NEW_FILENAME="${CLEAN_NAME}.${EXTENSION}"
+CLEAN_PATH="$DIR/$NEW_FILENAME"
+
+if [ "$INPUT_WALLPAPER" != "$CLEAN_PATH" ]; then
+  mv "$INPUT_WALLPAPER" "$CLEAN_PATH"
+  log_step "⚠ Archivo renombrado por seguridad: $FILENAME -> $NEW_FILENAME"
+  wallpaper="$CLEAN_PATH"
 else
-  echo "[SDDM] ERROR: El script de SDDM falló. Mira las líneas de arriba." >>"$LOG"
+  wallpaper="$INPUT_WALLPAPER"
 fi
 
-# --- 3. Generar Colores y Cache (Pywal) ---
-echo "[Pywal] Generando colores..." >>"$LOG"
+log_step "Wallpaper final a usar: $wallpaper"
+
+# --- 1. GENERACIÓN DE COLORES (CRÍTICO - BLOQUEANTE) ---
+# Pywal debe terminar antes de que otros plugins intenten leer los colores
+log_step "[Pywal] Iniciando generación de colores..."
 $WAL_PATH -i "$wallpaper" -n >>"$LOG" 2>&1
+log_step "[Pywal] Colores generados."
 
-# --- 3.5. Matugen + Inyección Directa (Anti-Cache) ---
-echo "[Matugen] Aplicando colores..." >>"$LOG"
-
+# Matugen (Generador de temas GTK)
 if command -v matugen &>/dev/null; then
-  # 1. Generamos el CSS en un archivo temporal
+  log_step "[Matugen] Iniciando generación..."
   matugen image "$wallpaper" >>"$LOG" 2>&1
 
-  # 2. Definimos rutas
+  # Inyección CSS para Libadwaita
   GTK_FILE="$HOME/.config/gtk-4.0/gtk.css"
   MATUGEN_FILE="$HOME/.config/gtk-4.0/matugen.css"
-
-  # 3. INYECCIÓN DIRECTA:
-  # Borramos el gtk.css y lo creamos de nuevo con el contenido pegado.
-  # Esto elimina la caché del @import.
-
-  # Escribimos las cabeceras estándar
   echo "@import url('libadwaita.css');" >"$GTK_FILE"
   echo "@import url('libadwaita-tweaks.css');" >>"$GTK_FILE"
   echo "" >>"$GTK_FILE"
   echo "/* --- COLORES INYECTADOS POR MATUGEN --- */" >>"$GTK_FILE"
-
-  # Pegamos el contenido RAW del archivo de matugen aquí mismo
   if [ -f "$MATUGEN_FILE" ]; then
     cat "$MATUGEN_FILE" >>"$GTK_FILE"
   fi
+  log_step "[Matugen] CSS Inyectado."
+else
+  log_step "[Matugen] No instalado, saltando."
+fi
 
-  # 4. Forzamos la recarga visual (El Flash)
-  # Usamos HighContrast porque es el que más "duele" a la vista del sistema y fuerza el repaint.
+# --- 2. ENLACES Y SISTEMA ---
+# Actualizamos el enlace simbólico al wallpaper actual
+ln -sf "$wallpaper" /home/bruno/.cache/current_wallpaper
 
+# --- 3. EJECUCIÓN PARALELA  ---
+log_step "[Parallel] Lanzando tareas en segundo plano..."
+
+# --- 4. SDDM ---
+(
+  if [ -f "/home/bruno/.local/bin/update-sddm-bg.sh" ]; then
+    sudo -n /home/bruno/.local/bin/update-sddm-bg.sh "$wallpaper" >>"$LOG" 2>&1
+  fi
+) &
+
+# --- 5. Rofi ---
+(
+  ROFI_SCRIPT="$HOME/.config/rofi/generate-theme.sh"
+  if [ -x "$ROFI_SCRIPT" ] || [ -f "$ROFI_SCRIPT" ]; then
+    log_step "[Rofi] Ejecutando generate-theme.sh..."
+    # Intentamos ejecutarlo. Si no tiene permisos +x, usamos bash
+    if [ -x "$ROFI_SCRIPT" ]; then
+      "$ROFI_SCRIPT" >>"$LOG" 2>&1
+    else
+      bash "$ROFI_SCRIPT" >>"$LOG" 2>&1
+    fi
+    log_step "[Rofi] Actualizado."
+  else
+    log_step "[Rofi] ⚠ Script no encontrado en: $ROFI_SCRIPT"
+  fi
+) &
+
+# --- 6. Recarga de GTK ---
+(
   CURRENT_THEME=$(gsettings get org.gnome.desktop.interface gtk-theme | tr -d "'")
-  if [ -z "$CURRENT_THEME" ]; then CURRENT_THEME="Adwaita"; fi
-
-  # Hacemos el switch
+  [ -z "$CURRENT_THEME" ] && CURRENT_THEME="Adwaita"
   gsettings set org.gnome.desktop.interface gtk-theme 'HighContrast'
   sleep 0.1
   gsettings set org.gnome.desktop.interface gtk-theme "$CURRENT_THEME"
+  log_step "[GTK-Reload] Tema refrescado."
+) &
 
-  echo "[Matugen] CSS inyectado directamente y recargado." >>"$LOG"
-else
-  echo "[Matugen] ERROR: No instalado." >>"$LOG"
-fi
+# --- 7. Componentes UI (SwayNC, Rofi, Waybar) ---
+(
+  if [ -f "/home/bruno/.config/swaync/generate-colors.sh" ]; then
+    /home/bruno/.config/swaync/generate-colors.sh >>"$LOG" 2>&1
+  fi
+) &
 
-# --- 4. Actualizar Enlace para HYPRLOCK ---
-ln -sf "$wallpaper" /home/bruno/.cache/current_wallpaper
+# --- 8. Walcord - Discord ---
+(
+  log_step "[Walcord] Actualizando colores de Discord..."
+  if command -v walcord &>/dev/null; then
+    # Usamos la ruta limpia y apuntamos DIRECTAMENTE a la carpeta de Vencord
+    walcord -i "$wallpaper" -o "$VENCORD_THEME_DIR/Walcord.theme.css" >>"$LOG" 2>&1
+    log_step "[Walcord] Tema regenerado en $VENCORD_THEME_DIR"
+  else
+    log_step "[Walcord] No instalado, saltando."
+  fi
+) &
 
-# --- 5. Recargar Componentes ---
-echo "[Reload] Recargando componentes..." >>"$LOG"
+# --- 9. Pywalfox ---
+(
+  log_step "[Pywalfox] Actualizando navegador..."
+  if command -v pywalfox &>/dev/null; then
+    pywalfox update >>"$LOG" 2>&1
+    log_step "[Pywalfox] Firefox actualizado."
+  else
+    log_step "[Pywalfox] CLI no instalada (pip install pywalfox)."
+  fi
+) &
 
-# SwayNC
-/home/bruno/.config/swaync/generate-colors.sh >>"$LOG" 2>&1
-killall -SIGUSR1 swaync
+# --- 10. Actualizar Spotify ---
+(
+  # 1. Copiamos el archivo generado por Wal a la carpeta de Spicetify
+  cp ~/.cache/wal/colors-spicetify.ini ~/.config/spicetify/Themes/Ziro/color.ini
+  log_step "[Spotify] Archivo de tema actualizado (Watcher hará el resto)."
+) &
 
-# Rofi
-/home/bruno/.config/rofi/generate-theme.sh >>"$LOG" 2>&1 &
+# --- 11. Actualizar iconos Wlogout
+(
+  SRC_ICONS="$HOME/.config/wlogout/icons"
+  CACHE_NORMAL="$HOME/.cache/wlogout/icons-normal"
+  CACHE_ACTIVE="$HOME/.cache/wlogout/icons-active"
+  WAL_COLOR_FILE="$HOME/.cache/wal/colors.sh"
 
-# Waybar
-killall -SIGUSR2 waybar
+  # 2. Verificar que existe la carpeta de origen
+  if [ ! -d "$SRC_ICONS" ]; then
+    echo "Error: No encuentro la carpeta de iconos en $SRC_ICONS"
+    exit 1
+  fi
 
-# Hyprland
-hyprctl reload
+  # 3. Importar colores de Pywal
+  if [ -f "$WAL_COLOR_FILE" ]; then
+    source "$WAL_COLOR_FILE"
+  else
+    echo "Error: No se han generado los colores de wal ($WAL_COLOR_FILE)"
+    exit 1
+  fi
 
-# --- 6. Otros (VSCode) ---
-VSCODE_THEME_DEST="/home/bruno/.vscode/extensions/dlasagno.wal-theme-1.2.0/themes/wal.json"
-WAL_THEME_SOURCE="/home/bruno/.cache/wal/vstheme.json"
+  # 4. Crear carpetas si no existen
+  mkdir -p "$CACHE_NORMAL" "$CACHE_ACTIVE"
 
-if [ -f "$WAL_THEME_SOURCE" ]; then
-  cp "$WAL_THEME_SOURCE" "$VSCODE_THEME_DEST"
-  echo "[VSCode] Tema actualizado." >>"$LOG"
-fi
+  # 5. Copiar iconos originales
+  cp "$SRC_ICONS"/*.svg "$CACHE_NORMAL/"
+  cp "$SRC_ICONS"/*.svg "$CACHE_ACTIVE/"
 
-# --- 7. Cargar colores a chromium
-~/.local/bin/apply-pywal-chromium.sh
+  # 6. Reemplazar colores
+  # Nota: Asumimos que el original es NEGRO (#000000).
+  # Si tus iconos originales son blancos, cambia #000000 por #ffffff abajo.
 
-echo "Script finalizado." >>"$LOG"
-notify-send -a "Hyprland" "Wallpaper Changed" "Check /tmp/waypaper_debug.log for details" -i "$wallpaper"
+  # Set Normal -> Color del texto ($foreground)
+  sed -i "s/#ffffff/$foreground/g" "$CACHE_NORMAL"/*.svg
+
+  # Set Activo -> Color Primario ($color4)
+  sed -i "s/#ffffff/$color2/g" "$CACHE_ACTIVE"/*.svg
+
+  echo "Iconos de wlogout actualizados correctamente."
+) &
+
+wait
+
+log_step "Script completado. Total: $(echo "$(date +%s.%N) - $START_TIME" | bc)s"
+
+notify-send -a "Hyprland" "Wallpaper Changed" "Theme updated successfully.\nFile: $(basename "$wallpaper")" -i "$wallpaper"

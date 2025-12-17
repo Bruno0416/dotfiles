@@ -47,6 +47,8 @@ window#waybar {
   transition: all 0.3s ease-in-out;
 }
 
+
+#workspaces button:hover,
 #workspaces button.active {
   background-color: @secondary;
   color: transparent;
@@ -54,14 +56,6 @@ window#waybar {
   min-width: 50px;
   background-size: 400% 400%;
   transition: all 0.3s ease-in-out;
-}
-
-#workspaces button:hover {
-  background-color: @secondary;
-  color: transparent;
-  border-radius: 100px;
-  min-width: 50px;
-  background-size: 400% 400%;
 }
 
 .modules-left {
@@ -88,7 +82,7 @@ window#waybar {
 #mpris {
   background-color: transparent;
   color: @fg;
-  padding: 0px 10px;
+  padding: 0px 7px;
   margin: 0;
   font-size: 14;
 }
@@ -101,11 +95,6 @@ window#waybar {
   font-size: 14;
 }
 
-
-#custom-update {
-  min-width: 12px;
-  margin: 0 7.5px;
-}
 
 
 tooltip {
@@ -121,7 +110,8 @@ tooltip {
   font-size: 14;
 }
 
-
+#custom-updates,
+#tray,
 #clock {
   border: solid 2px @fg;
   background-color: @bg;
