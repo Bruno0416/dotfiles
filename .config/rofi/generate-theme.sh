@@ -4,20 +4,20 @@
 COLORS="$HOME/.cache/wal/colors.sh"
 
 if [ ! -f "$COLORS" ]; then
-    echo "⚠️  Ejecuta 'wal -i /ruta/a/imagen' primero"
-    exit 1
+  echo "⚠️  Ejecuta 'wal -i /ruta/a/imagen' primero"
+  exit 1
 fi
 
 source "$COLORS"
 
 # Crear tema completo: Sin botones abajo, solo búsqueda y resultados
-cat > ~/.config/rofi/pywal-theme.rasi << THEME
+cat >~/.config/rofi/pywal-theme.rasi <<THEME
 * {
     font: "JetBrainsMono Nerd Font Propo 12";
     background:     ${background}BF;
     background-alt: ${color0}99;
     foreground:     ${foreground}FF;
-    selected:       ${color1}FF;
+    selected:       ${color2}FF;
     active:         ${color2}FF;
     urgent:         ${color3}FF;
     transparent:    #00000000;
@@ -112,7 +112,7 @@ element normal.normal, element alternate.normal {
 
 element selected.normal {
     background-color: @selected;
-    text-color: @background;
+    text-color: @foreground;
     border-radius: 12px;
 }
 

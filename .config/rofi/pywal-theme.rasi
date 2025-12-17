@@ -1,11 +1,11 @@
 * {
     font: "JetBrainsMono Nerd Font Propo 12";
-    background:     #010114BF;
-    background-alt: #01011499;
-    foreground:     #e4ecf6FF;
-    selected:       #916FB7FF;
-    active:         #FF578BFF;
-    urgent:         #F06C9DFF;
+    background:     #0c0d1bBF;
+    background-alt: #0c0d1b99;
+    foreground:     #c7b1baFF;
+    selected:       #CF4551FF;
+    active:         #CF4551FF;
+    urgent:         #565A88FF;
     transparent:    #00000000;
 }
 
@@ -98,7 +98,7 @@ element normal.normal, element alternate.normal {
 
 element selected.normal {
     background-color: @selected;
-    text-color: @background;
+    text-color: @foreground;
     border-radius: 12px;
 }
 

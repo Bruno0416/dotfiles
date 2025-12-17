@@ -3,7 +3,7 @@
 LOG="/tmp/waypaper_debug.log"
 INPUT_WALLPAPER="$1" # Guardamos el input original
 WAL_PATH="wal"
-VENCORD_THEME_DIR="$HOME/.config/Vencord/themes"
+VENCORD_THEME_DIR="$HOME/.var/app/com.discordapp.Discord/config/Vencord/themes"
 
 # --- FUNCIÓN DE LOGGING Y TIMER ---
 START_TIME=$(date +%s.%N)
@@ -68,17 +68,20 @@ else
   log_step "[Matugen] No instalado, saltando."
 fi
 
-# --- 2. ENLACES Y SISTEMA ---
-# Actualizamos el enlace simbólico al wallpaper actual
-ln -sf "$wallpaper" /home/bruno/.cache/current_wallpaper
+# --- 2. CREAR COPIA WALLPAPER ---
+# Aseguramos que el directorio destino exista
+mkdir -p "$HOME/.cache"
+
+# Convertimos la imagen de origen ($wallpaper) a formato PNG y la guardamos en el destino
+magick "$wallpaper" "$HOME/.cache/current_wallpaper.png"
 
 # --- 3. EJECUCIÓN PARALELA  ---
 log_step "[Parallel] Lanzando tareas en segundo plano..."
 
 # --- 4. SDDM ---
 (
-  if [ -f "/home/bruno/.local/bin/update-sddm-bg.sh" ]; then
-    sudo -n /home/bruno/.local/bin/update-sddm-bg.sh "$wallpaper" >>"$LOG" 2>&1
+  if [ -f "$HOME/.local/bin/update-sddm-bg.sh" ]; then
+    sudo -n $HOME/.local/bin/update-sddm-bg.sh "$wallpaper" >>"$LOG" 2>&1
   fi
 ) &
 
