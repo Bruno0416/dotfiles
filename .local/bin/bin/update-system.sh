@@ -3,7 +3,6 @@
 LOG="/tmp/waypaper_debug.log"
 INPUT_WALLPAPER="$1" # Guardamos el input original
 WAL_PATH="wal"
-VENCORD_THEME_DIR="$HOME/.var/app/com.discordapp.Discord/config/Vencord/themes"
 
 # --- FUNCIÓN DE LOGGING Y TIMER ---
 START_TIME=$(date +%s.%N)
@@ -122,9 +121,12 @@ log_step "[Parallel] Lanzando tareas en segundo plano..."
 # --- 8. Walcord - Discord ---
 (
   log_step "[Walcord] Actualizando colores de Discord..."
+  VENCORD_THEME_DIR="$HOME/.var/app/com.discordapp.Discord/config/Vencord/themes"
+  VENCORD_THEME_VESKTOP="$HOME/.config/vesktop/themes"
   if command -v walcord &>/dev/null; then
     # Usamos la ruta limpia y apuntamos DIRECTAMENTE a la carpeta de Vencord
     walcord -i "$wallpaper" -o "$VENCORD_THEME_DIR/Walcord.theme.css" >>"$LOG" 2>&1
+    walcord -i "$wallpaper" -o "$VENCORD_THEME_VESKTOP/Walcord.theme.css" >>"$LOG" 2>&1
     log_step "[Walcord] Tema regenerado en $VENCORD_THEME_DIR"
   else
     log_step "[Walcord] No instalado, saltando."
@@ -188,6 +190,11 @@ log_step "[Parallel] Lanzando tareas en segundo plano..."
   sed -i "s/#ffffff/$color2/g" "$CACHE_ACTIVE"/*.svg
 
   echo "Iconos de wlogout actualizados correctamente."
+) &
+
+# --- 12. Actualizar colores Quickshell
+(
+  ln -sf ~/.cache/wal/qs-colors.qml ~/.config/quickshell/Colors.qml
 ) &
 
 wait

@@ -20,13 +20,24 @@
   "hyprland/workspaces": {
     "format": "{icon}",
     "format-icons": {
-        "default": ""
+      "default": ""
     },
     "persistent-workspaces": {
-        "DP-1": [1, 2, 3, 4, 5],
-        "HDMI-A-1": [6, 7, 8, 9]
+      "DP-1": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "HDMI-A-1": [
+        6,
+        7,
+        8,
+        9
+      ]
     }
-},
+  },
   "group/music": {
     "tooltip": false,
     "orientation": "horizontal",
@@ -130,12 +141,6 @@
     "on-click-right": "swaync-client -d -sw",
     "escape": true
   },
-  // Módulo de Power (wlogout)
-  "custom/power": {
-    "format": "<span font='16'>󰐥</span>",
-    "tooltip": false,
-    "on-click": "wlogout --layout ~/.config/wlogout/layout --css ~/.config/wlogout/style.css --buttons-per-row 2 --margin-left 500 --margin-right 500"
-  },
   "custom/updates": {
     "format": "󰣇  {}",
     "interval": 3600, // Revisa cada hora
@@ -143,5 +148,5 @@
     "exec-if": "exit 0", // Para evitar errores si no hay updates
     "on-click": "kitty -e yay", // Comando para actualizar al hacer click
     "signal": 8
-}
+  }
 }
